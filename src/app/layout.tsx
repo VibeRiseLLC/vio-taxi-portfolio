@@ -4,6 +4,7 @@ import { LanguageProvider } from "@/lib/language-context";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileActions from "@/components/StickyMobileActions";
+import FloatingContactBubbles from "@/components/FloatingContactBubbles";
 import { BUSINESS } from "@/lib/business";
 
 export const metadata: Metadata = {
@@ -62,6 +63,7 @@ export default function RootLayout({
           <Header />
           <main className="min-h-screen pb-24 md:pb-0">{children}</main>
           <Footer />
+          <FloatingContactBubbles />
           <StickyMobileActions />
         </LanguageProvider>
       </body>

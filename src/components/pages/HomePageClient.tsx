@@ -40,6 +40,10 @@ const ICONS = {
   shield: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
   check: "M9 12l2 2 4-4",
   pin: "M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z",
+  plane: "M10.18 9.15L3 6.5l1.15-2 8.55 1.35L17.8 1.8a2 2 0 012.55.1 2 2 0 01.08 2.84l-4.1 5.1 1.35 8.55-2 1.15-2.65-7.18-4.28 4.28.18 3.04-1.62.92-1.64-4.18-4.18-1.64.92-1.62 3.04.18 4.28-4.2z",
+  briefcase: "M10 6V5a2 2 0 012-2h0a2 2 0 012 2v1m-8 0h12a2 2 0 012 2v9a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2zm0 5h12",
+  route: "M6 19a3 3 0 100-6 3 3 0 000 6zm12-8a3 3 0 100-6 3 3 0 000 6zM8.5 14.5l7-5",
+  clipboard: "M9 5h6m-7 2h8a2 2 0 012 2v10a2 2 0 01-2 2H8a2 2 0 01-2-2V9a2 2 0 012-2zm1-4h6a1 1 0 011 1v2H8V4a1 1 0 011-1zm1 11l1.5 1.5L15 12",
 };
 
 const WA_PATH = "M16 3C8.832 3 3 8.832 3 16c0 2.295.618 4.537 1.79 6.504L3 29l6.652-1.748A13.01 13.01 0 0016 29c7.168 0 13-5.832 13-13S23.168 3 16 3zm0 2c6.065 0 11 4.935 11 11S22.065 27 16 27a10.99 10.99 0 01-5.578-1.523l-.34-.207-3.948 1.036 1.067-3.844-.226-.352A10.966 10.966 0 015 16C5 9.935 9.935 5 16 5zm-2.7 4.5c-.264 0-.694.099-.955.374-.261.274-.999.976-.999 2.38 0 1.404 1.021 2.762 1.163 2.953.143.19 2.007 3.07 4.865 4.306.68.293 1.21.468 1.624.599.682.218 1.304.187 1.795.114.547-.082 1.685-.689 1.922-1.354.237-.665.237-1.235.166-1.354-.071-.12-.261-.19-.546-.333-.285-.143-1.685-.832-1.946-.927-.261-.095-.452-.143-.642.143-.19.285-.737.927-.902 1.117-.166.19-.332.214-.617.071-.285-.143-1.203-.443-2.292-1.414-.847-.754-1.419-1.686-1.585-1.97-.166-.285-.018-.44.125-.582.128-.127.285-.333.428-.499.143-.166.19-.285.285-.475.095-.19.047-.357-.024-.499-.071-.143-.641-1.547-.878-2.117-.231-.555-.465-.48-.642-.488-.166-.007-.356-.009-.547-.009z";
@@ -53,100 +57,323 @@ function Icon({ d, size = 20, color = C.gold, sw = 1.5 }: { d: string; size?: nu
   );
 }
 
+function DemoReviewBadge({ lang }: { lang: "nl" | "en" }) {
+  return (
+    <div className="flex flex-wrap items-center gap-2 pt-2 text-sm" aria-label={lang === "nl" ? "Demo review badge" : "Demo review badge"}>
+      <span className="font-semibold" style={{ color: C.cream }}>
+        {lang === "nl" ? "Uitstekend" : "Excellent"}
+      </span>
+      <span className="flex items-center gap-0.5" aria-hidden="true">
+        {Array.from({ length: 5 }).map((_, idx) => (
+          <span key={idx} className="flex h-5 w-5 items-center justify-center rounded-[2px]" style={{ backgroundColor: "#00B67A", color: "#fff" }}>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.7l2.85 5.78 6.38.93-4.62 4.5 1.09 6.36L12 17.27l-5.7 3 1.09-6.36-4.62-4.5 6.38-.93L12 2.7z" />
+            </svg>
+          </span>
+        ))}
+      </span>
+      <span style={{ color: C.cream }}>
+        {lang === "nl" ? "4.9 uit 5" : "4.9 out of 5"}
+      </span>
+      <span className="text-xs" style={{ color: C.mutedDark }}>
+        {lang === "nl" ? "portfolio mockup" : "portfolio mockup"}
+      </span>
+    </div>
+  );
+}
+
+function HeroRequestPanel({ lang }: { lang: "nl" | "en" }) {
+  const fieldBase = "w-full rounded-md border py-3 text-[14px] outline-none transition-colors placeholder:text-[#8B857C] focus:border-[#D2A43A]";
+  const fieldStyle = {
+    backgroundColor: "rgba(244,239,227,0.08)",
+    borderColor: "rgba(244,239,227,0.12)",
+    color: C.cream,
+  };
+
+  return (
+    <aside
+      id="hero-request-panel"
+      className="hidden w-full max-w-[360px] rounded-xl border p-5 shadow-2xl lg:block"
+      style={{
+        backgroundColor: "rgba(10,15,29,0.92)",
+        borderColor: "rgba(244,239,227,0.10)",
+        boxShadow: "0 24px 70px rgba(0,0,0,0.38)",
+        backdropFilter: "blur(14px)",
+      }}
+      aria-label={lang === "nl" ? "Transferaanvraag" : "Transfer request"}
+    >
+      <div className="mb-4">
+        <h2 className="text-2xl font-extrabold tracking-tight" style={{ color: C.cream }}>
+          {lang === "nl" ? "Plan uw rit" : "Plan your ride"}
+        </h2>
+        <p className="mt-2 text-sm leading-relaxed" style={{ color: C.muted }}>
+          {lang === "nl"
+            ? "Ontvang een passende offerte na beoordeling van uw aanvraag."
+            : "Receive a suitable quote after your request is reviewed."}
+        </p>
+      </div>
+
+      <form action="/book" method="get" className="grid gap-3">
+        <label className="relative block">
+          <span className="absolute left-4 top-1/2 -translate-y-1/2">
+            <Icon d={ICONS.pin} size={16} />
+          </span>
+          <span className="sr-only">{lang === "nl" ? "Ophaallocatie" : "Pickup location"}</span>
+          <input
+            name="pickup"
+            required
+            autoComplete="street-address"
+            placeholder={lang === "nl" ? "Ophaallocatie" : "Pickup location"}
+            className={`${fieldBase} pl-11 pr-4`}
+            style={fieldStyle}
+          />
+        </label>
+
+        <label className="relative block">
+          <span className="absolute left-4 top-1/2 -translate-y-1/2">
+            <Icon d={ICONS.pin} size={16} />
+          </span>
+          <span className="sr-only">{lang === "nl" ? "Bestemming" : "Destination"}</span>
+          <input
+            name="destination"
+            required
+            placeholder={lang === "nl" ? "Bestemming" : "Destination"}
+            className={`${fieldBase} pl-11 pr-4`}
+            style={fieldStyle}
+          />
+        </label>
+
+        <div className="grid grid-cols-2 gap-2">
+          <label className="relative block">
+            <span className="absolute left-4 top-1/2 -translate-y-1/2">
+              <Icon d={ICONS.calendar} size={15} />
+            </span>
+            <span className="sr-only">{lang === "nl" ? "Datum" : "Date"}</span>
+            <input
+              name="date"
+              type="date"
+              required
+              className={`${fieldBase} pl-10 pr-3`}
+              style={fieldStyle}
+            />
+          </label>
+          <label className="relative block">
+            <span className="absolute left-4 top-1/2 -translate-y-1/2">
+              <Icon d={ICONS.clock} size={15} />
+            </span>
+            <span className="sr-only">{lang === "nl" ? "Tijd" : "Time"}</span>
+            <input
+              name="time"
+              type="time"
+              required
+              className={`${fieldBase} pl-10 pr-3`}
+              style={fieldStyle}
+            />
+          </label>
+        </div>
+
+        <label className="relative block">
+          <span className="absolute left-4 top-1/2 -translate-y-1/2">
+            <Icon d={ICONS.person} size={16} />
+          </span>
+          <span className="sr-only">{lang === "nl" ? "Aantal passagiers" : "Passengers"}</span>
+          <select
+            name="passengers"
+            defaultValue="1"
+            className={`${fieldBase} appearance-none pl-11 pr-10`}
+            style={fieldStyle}
+          >
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((count) => (
+              <option key={count} value={count}>
+                {lang === "nl" ? `${count} persoon${count === 1 ? "" : "en"}` : `${count} passenger${count === 1 ? "" : "s"}`}
+              </option>
+            ))}
+          </select>
+          <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
+            <Icon d="M6 9l6 6 6-6" size={15} color={C.mutedDark} sw={2} />
+          </span>
+        </label>
+
+        <label className="relative block">
+          <span className="absolute left-4 top-4">
+            <Icon d={ICONS.clipboard} size={16} />
+          </span>
+          <span className="sr-only">{lang === "nl" ? "Opmerkingen" : "Notes"}</span>
+          <textarea
+            name="notes"
+            rows={2}
+            placeholder={lang === "nl" ? "Vluchtgegevens, bagage of wensen" : "Flight details, luggage or requests"}
+            className={`${fieldBase} resize-none pl-11 pr-4`}
+            style={fieldStyle}
+          />
+        </label>
+
+        <p className="text-xs leading-relaxed" style={{ color: C.mutedDark }}>
+          {lang === "nl"
+            ? "Aanvragen worden beoordeeld voordat ze bevestigd worden."
+            : "Requests are reviewed before confirmation."}
+        </p>
+
+        <button
+          type="submit"
+          className="mt-1 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-extrabold transition-all hover:brightness-105 active:scale-[0.98]"
+          style={{ backgroundColor: C.gold, color: C.bg, boxShadow: "0 14px 28px rgba(210,164,58,0.18)" }}
+        >
+          {lang === "nl" ? "Offerte aanvragen" : "Request a quote"}
+          <Icon d={ICONS.chevron} size={15} color={C.bg} sw={2.6} />
+        </button>
+      </form>
+    </aside>
+  );
+}
+
 export default function HomePageClient() {
   const { lang } = useLanguage();
+  const serviceStrip = [
+    {
+      icon: ICONS.plane,
+      title: { nl: "Luchthaventransfers", en: "Airport transfers" },
+      desc: { nl: "Schiphol, Eelde Airport", en: "Schiphol, Eelde Airport" },
+    },
+    {
+      icon: ICONS.briefcase,
+      title: { nl: "Zakelijk vervoer", en: "Business travel" },
+      desc: { nl: "Discreet, representatief", en: "Discreet and polished" },
+    },
+    {
+      icon: ICONS.route,
+      title: { nl: "Lange ritten", en: "Long-distance journeys" },
+      desc: { nl: "Door Nederland en daarbuiten", en: "Across the Netherlands and beyond" },
+    },
+    {
+      icon: ICONS.shield,
+      title: { nl: "Heldere afspraken", en: "Clear arrangements" },
+      desc: { nl: "Geen verrassingen", en: "No surprises" },
+    },
+  ];
 
   return (
     <div style={{ backgroundColor: C.bg, color: C.cream }}>
 
       <section id="hero" className="relative overflow-hidden" style={{ backgroundColor: C.dark, borderBottom: `1px solid ${C.border}` }}>
-        <div className="absolute inset-0 pointer-events-none" style={{
-          background: "linear-gradient(180deg, rgba(13,17,32,0.72), rgba(5,9,20,0.96))",
-        }} aria-hidden="true" />
+        <Image
+          src="/images/noordlijn-hero-bg.png"
+          alt=""
+          fill
+          sizes="100vw"
+          className="pointer-events-none object-cover object-[58%_center]"
+          priority
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(5,9,20,0.98) 0%, rgba(5,9,20,0.82) 35%, rgba(5,9,20,0.28) 66%, rgba(5,9,20,0.76) 100%), linear-gradient(180deg, rgba(5,9,20,0.34) 0%, rgba(5,9,20,0.18) 42%, rgba(5,9,20,0.96) 100%)",
+          }}
+          aria-hidden="true"
+        />
 
-        <div className="relative z-10 max-w-6xl mx-auto px-4 py-10 md:py-12 lg:py-14 grid gap-8 md:grid-cols-[1.02fr_0.98fr] md:items-center">
-          <div className="flex flex-col items-start text-left gap-4 max-w-2xl">
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-8 px-4 pb-8 pt-12 md:px-6 md:pb-12 md:pt-16 lg:min-h-[610px] lg:grid-cols-[1fr_390px] lg:items-center lg:pb-28 lg:pt-16">
+          <div className="flex max-w-2xl flex-col items-start gap-5 text-left">
             <div className="inline-flex items-center gap-2 border-l pl-3" style={{ borderColor: "rgba(210,164,58,0.72)" }}>
-              <span className="text-[10px] font-bold uppercase tracking-[0.16em]" style={{ color: C.gold }}>
-                {tx(t.hero.trustBadge, lang)}
+              <span className="text-[11px] font-bold uppercase tracking-[0.18em]" style={{ color: C.gold }}>
+                {lang === "nl" ? "Premium chauffeurservice vanuit Groningen" : "Premium chauffeur service from Groningen"}
               </span>
             </div>
 
-            <h1 className="font-extrabold tracking-tight leading-[1.05]" style={{ color: C.cream, fontSize: "clamp(2.2rem, 3.8vw, 3.55rem)" }}>
-              {tx(t.hero.title, lang)}
+            <h1 className="font-extrabold tracking-tight leading-[1.06]" style={{ color: C.cream, fontSize: "clamp(3rem, 5.4vw, 5.25rem)" }}>
+              {lang === "nl" ? (
+                <>
+                  Comfortabel reizen.
+                  <br />
+                  Zorgvuldig gepland.
+                </>
+              ) : (
+                <>
+                  Travel in comfort.
+                  <br />
+                  Planned with care.
+                </>
+              )}
             </h1>
 
-            <p className="text-base md:text-lg leading-relaxed max-w-xl" style={{ color: C.muted }}>
-              {tx(t.hero.subtitle, lang)}
-            </p>
-
-            <p className="text-sm leading-relaxed max-w-lg" style={{ color: C.mutedDark }}>
-              {tx(t.hero.support, lang)}
+            <p className="max-w-2xl text-base leading-relaxed md:text-lg" style={{ color: C.muted }}>
+              {lang === "nl"
+                ? "Luchthaventransfers, zakelijke ritten en langeafstandstrajecten met discrete service en duidelijke afspraken."
+                : "Airport transfers, business travel and long-distance journeys with discreet service and clear planning."}
             </p>
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1 w-full sm:w-auto">
               <a href="/book" id="hero-book-btn"
-                className="inline-flex items-center justify-center gap-2 rounded-lg font-bold transition-all hover:brightness-105 active:scale-[0.98] w-full sm:w-auto"
-                style={{ backgroundColor: C.gold, color: C.bg, padding: "13px 24px", fontSize: "1rem", minHeight: 48, boxShadow: "0 12px 28px rgba(210,164,58,0.18)" }}>
+                className="inline-flex items-center justify-center gap-2 rounded-md font-bold transition-all hover:brightness-105 active:scale-[0.98] w-full sm:w-auto"
+                style={{ backgroundColor: C.gold, color: C.bg, padding: "15px 30px", fontSize: "1rem", minHeight: 54, boxShadow: "0 16px 34px rgba(210,164,58,0.24)" }}>
                 <Icon d={ICONS.calendar} size={17} color={C.bg} sw={2.4} />
-                {tx(t.hero.ctaBook, lang)}
+                {lang === "nl" ? "Plan een transfer" : "Plan a transfer"}
               </a>
               <a href="/services" id="hero-services-btn"
-                className="inline-flex items-center justify-center rounded-lg font-semibold transition-all hover:text-[#F4EFE3] active:scale-[0.98] w-full sm:w-auto"
-                style={{ color: C.muted, border: "1px solid rgba(244,239,227,0.18)", padding: "12px 20px", fontSize: "0.94rem", minHeight: 46 }}>
+                className="inline-flex items-center justify-center rounded-md font-semibold transition-all hover:text-[#F4EFE3] active:scale-[0.98] w-full sm:w-auto"
+                style={{ color: C.cream, border: "1px solid rgba(244,239,227,0.24)", backgroundColor: "rgba(5,9,20,0.38)", padding: "14px 26px", fontSize: "0.95rem", minHeight: 52 }}>
                 {lang === "nl" ? "Bekijk diensten" : "View services"}
               </a>
             </div>
 
-            <div className="flex flex-wrap gap-2 pt-1" aria-label={tx(t.hero.popularRides, lang)}>
-              {(lang === "nl"
-                ? ["Groningen","Hoogezand","Eelde Airport","Assen","Schiphol"]
-                : ["Groningen","Hoogezand","Eelde Airport","Assen","Schiphol"]
-              ).map((dest) => (
-                <a key={dest} href={`/book?dest=${encodeURIComponent(dest)}`}
-                  className="rounded-full px-3 py-1.5 text-[11px] font-medium transition-colors"
-                  style={{ backgroundColor: "rgba(244,239,227,0.045)", color: "rgba(244,239,227,0.74)", border: "1px solid rgba(244,239,227,0.08)" }}
-                >{dest}</a>
+            <DemoReviewBadge lang={lang} />
+
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2 pt-2 text-sm" style={{ color: C.cream }}>
+              <span className="font-semibold">{lang === "nl" ? "Groningen" : "Groningen"}</span>
+              {["Eelde Airport", "Assen", "Schiphol"].map((dest) => (
+                <span key={dest} className="flex items-center gap-3" style={{ color: C.muted }}>
+                  <span className="h-1 w-1 rounded-full" style={{ backgroundColor: C.gold }} aria-hidden="true" />
+                  {dest}
+                </span>
               ))}
             </div>
           </div>
 
-          <div className="relative md:justify-self-end w-full">
-            <div className="relative mx-auto md:mx-0 w-full max-w-[560px] overflow-hidden rounded-xl" style={{ backgroundColor: "#0B1020", border: `1px solid rgba(244,239,227,0.10)` }}>
-              <Image
-                src="/images/noordlijn-hero.svg"
-                alt="Noordlijn Chauffeurs airport transfer concept artwork"
-                width={900}
-                height={675}
-                sizes="(max-width: 767px) 100vw, 48vw"
-                className="block h-auto w-full"
-                priority
-              />
-              <div className="absolute inset-x-0 bottom-0 px-4 py-3" style={{ background: "linear-gradient(180deg, transparent, rgba(5,9,20,0.92))" }}>
-                <p className="text-xs font-medium" style={{ color: C.muted }}>
-                  Noordlijn Chauffeurs · Groningen
-                </p>
-              </div>
-            </div>
+          <div className="hidden justify-self-end lg:block">
+            <HeroRequestPanel lang={lang} />
           </div>
         </div>
-      </section>
 
-      {/* ══════════════════════════════════════════════════════════════
-          SECTION 2: TRUST STRIP — desktop only
-      ══════════════════════════════════════════════════════════════ */}
-      <QuickBookingSection lang={lang} />
-
-      <section className="hidden md:block py-4 px-4" style={{ backgroundColor: "#060810", borderBottom: `1px solid ${C.border}` }}>
-        <div className="max-w-6xl mx-auto grid grid-cols-6 gap-6">
-          {t.trustStrip.items.map((item, idx) => (
-            <div key={idx} className="flex items-center gap-3 py-2">
-              <span className="text-xl flex-shrink-0" aria-hidden="true">{item.icon}</span>
-              <span className="text-sm font-medium" style={{ color: C.muted }}>{tx(item.label, lang)}</span>
+        <div
+          className="relative z-20 mx-4 mb-6 grid max-w-6xl grid-cols-2 overflow-hidden rounded-xl border md:mx-6 lg:absolute lg:inset-x-0 lg:bottom-6 lg:mx-auto lg:mb-0 lg:grid-cols-4"
+          style={{ backgroundColor: "rgba(10,15,29,0.92)", borderColor: "rgba(244,239,227,0.13)", backdropFilter: "blur(14px)" }}
+        >
+          {serviceStrip.map((item, idx) => (
+            <div
+              key={tx(item.title, lang)}
+              className={`flex min-h-[88px] items-center gap-3 px-4 py-4 md:min-h-[92px] md:px-5 ${
+                idx < 2 ? "border-b md:border-b-0" : ""
+              } ${idx % 2 === 0 ? "border-r" : ""} ${
+                idx < serviceStrip.length - 1 ? "md:border-r" : "md:border-r-0"
+              }`}
+              style={{
+                borderColor: "rgba(244,239,227,0.08)",
+              }}
+            >
+              <span
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full"
+                style={{ backgroundColor: "rgba(210,164,58,0.08)", color: C.gold }}
+              >
+                <Icon d={item.icon} size={20} color={C.gold} sw={1.7} />
+              </span>
+              <span className="min-w-0">
+                <span className="block text-sm font-semibold leading-snug" style={{ color: C.cream }}>
+                  {tx(item.title, lang)}
+                </span>
+                <span className="mt-1 block text-xs leading-relaxed" style={{ color: C.mutedDark }}>
+                  {tx(item.desc, lang)}
+                </span>
+              </span>
             </div>
           ))}
         </div>
       </section>
+
+      <div className="lg:hidden">
+        <QuickBookingSection lang={lang} />
+      </div>
 
       {/* ══════════════════════════════════════════════════════════════
           SECTION 3: HOW IT WORKS — 3 compact steps
@@ -164,7 +391,7 @@ export default function HomePageClient() {
       {/* ══════════════════════════════════════════════════════════════
           SECTION 4: POSITIONING — personal trust with visual
       ══════════════════════════════════════════════════════════════ */}
-      <section className="py-14 md:py-16 px-4 md:px-6" style={{ backgroundColor: C.dark, borderBottom: `1px solid ${C.border}` }}>
+      <section className="py-12 md:py-14 px-4 md:px-6" style={{ backgroundColor: C.dark, borderBottom: `1px solid ${C.border}` }}>
         <div className="max-w-6xl mx-auto grid md:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
           <div className="flex flex-col items-start gap-5">
             <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: C.gold }}>
@@ -185,14 +412,14 @@ export default function HomePageClient() {
             </ul>
             <div className="flex flex-col sm:flex-row gap-3 pt-3 w-full sm:w-auto">
               <a href={`tel:${BUSINESS.phone}`}
-                className="inline-flex items-center justify-center gap-2 rounded-xl font-bold transition-all hover:scale-105 active:scale-95 w-full sm:w-auto"
-                style={{ backgroundColor: C.gold, color: C.bg, padding: "14px 28px", fontSize: "0.95rem", minHeight: 48 }}>
+                className="inline-flex items-center justify-center gap-2 rounded-lg font-bold transition-all hover:brightness-105 active:scale-[0.98] w-full sm:w-auto"
+                style={{ backgroundColor: C.gold, color: C.bg, padding: "13px 24px", fontSize: "0.95rem", minHeight: 48 }}>
                 <Icon d={ICONS.phone} size={16} color={C.bg} sw={2.5} />
                 {tx(t.hero.ctaCall, lang)}
               </a>
               <a href={`https://wa.me/${BUSINESS.whatsapp}`} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all hover:scale-105 active:scale-95 w-full sm:w-auto"
-                style={{ backgroundColor: "rgba(210,164,58,0.05)", color: C.gold, border: `1.5px solid ${C.gold}`, padding: "14px 28px", fontSize: "0.95rem", minHeight: 48 }}>
+                className="inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-all hover:border-[#D2A43A] hover:text-[#F4EFE3] active:scale-[0.98] w-full sm:w-auto"
+                style={{ backgroundColor: "rgba(244,239,227,0.035)", color: C.muted, border: "1px solid rgba(244,239,227,0.16)", padding: "13px 24px", fontSize: "0.95rem", minHeight: 48 }}>
                 <svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor" className="shrink-0 text-green-400"><path d={WA_PATH} /></svg>
                 {tx(t.hero.ctaWhatsapp, lang)}
               </a>
@@ -210,8 +437,8 @@ export default function HomePageClient() {
       {/* ══════════════════════════════════════════════════════════════
           SECTION 5: PERSONAL SERVICE — trust & promises (different bg)
       ══════════════════════════════════════════════════════════════ */}
-      <section className="py-14 md:py-16 px-4 md:px-6" style={{ backgroundColor: C.navy, borderBottom: `1px solid ${C.border}` }}>
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+      <section className="py-12 md:py-14 px-4 md:px-6" style={{ backgroundColor: C.navy, borderBottom: `1px solid ${C.border}` }}>
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-10 items-start">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: C.gold }}>
               {lang === "nl" ? "Geplande chauffeurservice" : "Pre-booked chauffeur service"}
@@ -239,18 +466,18 @@ export default function HomePageClient() {
       {/* ══════════════════════════════════════════════════════════════
           SECTION 6: SERVICES — 4 cards
       ══════════════════════════════════════════════════════════════ */}
-      <section className="py-14 md:py-16 px-4 md:px-6" style={{ backgroundColor: C.dark }}>
+      <section className="py-12 md:py-14 px-4 md:px-6" style={{ backgroundColor: C.dark }}>
         <div className="max-w-6xl mx-auto">
           <p className="text-xs font-semibold uppercase tracking-widest mb-3 text-center" style={{ color: C.gold }}>
             {lang === "nl" ? "Wat wij aanbieden" : "What we offer"}
           </p>
-          <h2 className="text-2xl font-bold mb-10 text-center tracking-tight" style={{ color: C.cream }}>{tx(t.services.heading, lang)}</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <h2 className="text-2xl font-bold mb-7 text-center tracking-tight" style={{ color: C.cream }}>{tx(t.services.heading, lang)}</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {t.services.items.map((item, idx) => (
               <ServiceCard key={idx} icon={item.icon} title={tx(item.title, lang)} description={tx(item.desc, lang)} />
             ))}
           </div>
-          <div className="text-center mt-10">
+          <div className="text-center mt-8">
             <Button href="/services" variant="secondary" id="home-all-services-btn">
               {lang === "nl" ? "Alle diensten bekijken" : "View all services"} →
             </Button>
@@ -261,7 +488,7 @@ export default function HomePageClient() {
       {/* ══════════════════════════════════════════════════════════════
           SECTION 7: PREMIUM COMFORT — visual break
       ══════════════════════════════════════════════════════════════ */}
-      <section className="py-14 md:py-16 px-4 md:px-6 relative overflow-hidden" style={{ backgroundColor: C.navy, borderTop: `1px solid ${C.border}`, borderBottom: `1px solid ${C.border}` }}>
+      <section className="py-12 md:py-14 px-4 md:px-6 relative overflow-hidden" style={{ backgroundColor: C.navy, borderTop: `1px solid ${C.border}`, borderBottom: `1px solid ${C.border}` }}>
         <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 70% 50%, rgba(210,164,58,0.04) 0%, transparent 70%)" }} aria-hidden="true" />
         <div className="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center gap-6">
           <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: C.gold }}>Comfort</p>
@@ -294,12 +521,12 @@ export default function HomePageClient() {
       {/* ══════════════════════════════════════════════════════════════
           SECTION 9: WHY NOORDLIJN — reason cards
       ══════════════════════════════════════════════════════════════ */}
-      <section className="py-12 md:py-14 px-4 md:px-6" style={{ backgroundColor: C.navy, borderTop: `1px solid ${C.border}` }}>
+      <section className="py-11 md:py-14 px-4 md:px-6" style={{ backgroundColor: C.navy, borderTop: `1px solid ${C.border}` }}>
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl font-bold mb-8 text-center tracking-tight" style={{ color: C.cream }}>{tx(t.whyUs.heading, lang)}</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {t.whyUs.points.map((point, idx) => (
-              <div key={idx} className="flex flex-col gap-3 rounded-2xl p-5" style={{ backgroundColor: C.dark, border: `1px solid ${C.border}` }}>
+              <div key={idx} className="flex flex-col gap-3 rounded-xl p-4" style={{ backgroundColor: C.dark, border: `1px solid rgba(244,239,227,0.08)` }}>
                 <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
                   style={{ backgroundColor: "rgba(210,164,58,0.09)" }} aria-hidden="true">
                   <Icon d={ICONS.check} size={14} color={C.gold} sw={3} />
@@ -323,7 +550,7 @@ export default function HomePageClient() {
       {/* ══════════════════════════════════════════════════════════════
           SECTION 10B: SERVICE VALUES
       ══════════════════════════════════════════════════════════════ */}
-      <section className="py-12 md:py-14 px-4 md:px-6" style={{ backgroundColor: C.dark, borderTop: `1px solid ${C.border}` }}>
+      <section className="py-11 md:py-14 px-4 md:px-6" style={{ backgroundColor: C.dark, borderTop: `1px solid ${C.border}` }}>
         <div className="max-w-6xl mx-auto">
           <div className="max-w-2xl mx-auto text-center mb-8">
             <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: C.gold }}>
@@ -336,13 +563,13 @@ export default function HomePageClient() {
               {tx(t.testimonials.intro, lang)}
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {t.testimonials.items.map((item) => (
-              <article key={tx(item.author, lang)} className="rounded-2xl p-5" style={{ backgroundColor: C.navy, border: `1px solid ${C.border}` }}>
-                <p className="text-[11px] font-bold uppercase tracking-widest mb-4" style={{ color: C.gold }}>
+              <article key={tx(item.author, lang)} className="rounded-xl p-4" style={{ backgroundColor: C.navy, border: "1px solid rgba(244,239,227,0.08)" }}>
+                <p className="text-[11px] font-bold uppercase tracking-widest mb-3" style={{ color: C.gold }}>
                   {lang === "nl" ? "Chauffeurconcept" : "Chauffeur concept"}
                 </p>
-                <p className="text-sm leading-relaxed mb-5" style={{ color: C.muted }}>
+                <p className="text-sm leading-relaxed mb-4" style={{ color: C.muted }}>
                   {tx(item.quote, lang)}
                 </p>
                 <p className="text-xs font-semibold" style={{ color: C.cream }}>
@@ -359,7 +586,7 @@ export default function HomePageClient() {
           Slightly different background with subtle gold ambient glow
           to break away from the identical dark card pattern.
       ══════════════════════════════════════════════════════════════ */}
-      <section className="relative py-14 md:py-16 px-4 md:px-6 overflow-hidden" style={{ borderTop: `1px solid ${C.border}` }}>
+      <section className="relative py-12 md:py-14 px-4 md:px-6 overflow-hidden" style={{ borderTop: `1px solid ${C.border}` }}>
         {/* Distinct background: darker base + subtle gold radial glow */}
         <div className="absolute inset-0" style={{ backgroundColor: "#040710" }} />
         <div className="absolute inset-0 pointer-events-none" style={{
@@ -375,16 +602,16 @@ export default function HomePageClient() {
           <p className="text-[15px] leading-relaxed" style={{ color: C.muted, fontWeight: 420 }}>
             {tx(t.finalCta.sub, lang)}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center pt-4">
+          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto justify-center pt-2">
             <a href="/book" id="final-book-btn"
-              className="inline-flex items-center justify-center gap-2.5 rounded-xl font-bold transition-all hover:scale-105 active:scale-95 w-full sm:w-auto text-center"
-              style={{ backgroundColor: C.gold, color: C.bg, padding: "16px 36px", fontSize: "1.0625rem", minHeight: 54, boxShadow: "0 4px 16px rgba(210,164,58,0.20)" }}>
+              className="inline-flex items-center justify-center gap-2.5 rounded-lg font-bold transition-all hover:brightness-105 active:scale-[0.98] w-full sm:w-auto text-center"
+              style={{ backgroundColor: C.gold, color: C.bg, padding: "14px 28px", fontSize: "1rem", minHeight: 50, boxShadow: "0 12px 24px rgba(210,164,58,0.16)" }}>
               <Icon d={ICONS.calendar} size={18} color={C.bg} sw={2.5} />
               {tx(t.finalCta.ctaBook, lang)}
             </a>
             <a href={`https://wa.me/${BUSINESS.whatsapp}`} id="final-whatsapp-btn" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 rounded-xl font-semibold transition-all hover:scale-105 active:scale-95 w-full sm:w-auto text-center"
-              style={{ backgroundColor: "rgba(210,164,58,0.06)", color: C.gold, border: `1.5px solid ${C.gold}`, padding: "16px 32px", fontSize: "1rem", minHeight: 54 }}>
+              className="inline-flex items-center justify-center gap-2.5 rounded-lg font-semibold transition-all hover:border-[#D2A43A] hover:text-[#F4EFE3] active:scale-[0.98] w-full sm:w-auto text-center"
+              style={{ backgroundColor: "rgba(244,239,227,0.035)", color: C.muted, border: "1px solid rgba(244,239,227,0.16)", padding: "14px 26px", fontSize: "0.96rem", minHeight: 50 }}>
               <svg width="18" height="18" viewBox="0 0 32 32" fill="currentColor" className="shrink-0 text-green-400" aria-hidden="true"><path d={WA_PATH} /></svg>
               {tx(t.finalCta.ctaWhatsapp, lang)}
             </a>
