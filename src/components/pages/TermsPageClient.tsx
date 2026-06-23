@@ -2,7 +2,7 @@
 
 /**
  * TermsPageClient.tsx
- * Draft terms for the fictional Northline Private Hire portfolio demo.
+ * Draft terms for the fictional Noordlijn Chauffeurs portfolio concept.
  */
 
 import { useLanguage } from "@/lib/language-context";
@@ -17,8 +17,8 @@ export default function TermsPageClient() {
         <div className="bg-amber-50 border border-amber-200 rounded-lg px-4 py-3 text-sm text-amber-800 mb-8">
           ⚠️{" "}
           {lang === "nl"
-            ? "Portfolio demo - Northline Private Hire is een fictioneel merk."
-            : "Portfolio demo - Northline Private Hire is a fictional brand."}
+            ? "Portfolio demonstratiewebsite - Noordlijn Chauffeurs is een fictioneel merk."
+            : "Portfolio demonstration website - Noordlijn Chauffeurs is a fictional brand."}
         </div>
 
         {lang === "nl" ? <TermsNL /> : <TermsEN />}
@@ -34,26 +34,26 @@ function TermsNL() {
         Boekingsvoorwaarden
       </h1>
       <p className="text-sm mb-8" style={{ color: "#8A8478" }}>
-        Versie 1 - Northline Private Hire, Groningen
+        Versie 1 - Noordlijn Chauffeurs, Groningen
       </p>
 
-      <ProseSection title="1. Demo-aanvragen zijn geen boekingen">
+      <ProseSection title="1. Aanvragen zijn geen boekingen">
         <p>
-          Een aanvraag via het formulier, WhatsApp of e-mail is in deze portfolio-demo
+          Een aanvraag via het formulier, WhatsApp of e-mail is in deze portfolio-demonstratie
           geen echte boeking en geen automatische bevestiging.
         </p>
       </ProseSection>
 
       <ProseSection title="2. Bevestiging">
         <p>
-          De website laat zien hoe een private-hire merk handmatige bevestiging kan
-          uitleggen. Totdat een echte vervoerder bevestigt, is er geen rit gereserveerd.
+          De website laat zien hoe een chauffeurmerk handmatige bevestiging kan
+          uitleggen. Totdat een echte vervoerder bevestigt, is er geen traject gereserveerd.
         </p>
       </ProseSection>
 
       <ProseSection title="3. Prijzen">
         <p>
-          De demo gebruikt offerte- en prijsindicatiecopy. Er worden geen echte tarieven
+          De demonstratie gebruikt offerte- en prijsindicatiecopy. Er worden geen echte tarieven
           gepubliceerd en er wordt geen betaling verwerkt.
         </p>
       </ProseSection>
@@ -68,7 +68,7 @@ function TermsNL() {
 
       <ProseSection title="5. Contact">
         <p>
-          Vragen over deze demo? Neem contact op via{" "}
+          Vragen over deze portfolio-demonstratie? Neem contact op via{" "}
           <a href={`mailto:${BUSINESS.email}`} className="text-yellow-500 underline">
             {BUSINESS.email}
           </a>{" "}
@@ -86,26 +86,26 @@ function TermsEN() {
         Booking Terms
       </h1>
       <p className="text-sm mb-8" style={{ color: "#8A8478" }}>
-        Version 1 - Northline Private Hire, Groningen
+        Version 1 - Noordlijn Chauffeurs, Groningen
       </p>
 
-      <ProseSection title="1. Demo requests are not bookings">
+      <ProseSection title="1. Requests are not bookings">
         <p>
           A request submitted through the form, WhatsApp or email is not a real booking
-          and not an automatic confirmation in this portfolio demo.
+          and not an automatic confirmation in this portfolio demonstration.
         </p>
       </ProseSection>
 
       <ProseSection title="2. Confirmation">
         <p>
-          The website shows how a private-hire brand can explain manual confirmation.
-          Until a real transport provider confirms, no ride is reserved.
+          The website shows how a chauffeur brand can explain manual confirmation.
+          Until a real transport provider confirms, no journey is reserved.
         </p>
       </ProseSection>
 
       <ProseSection title="3. Pricing">
         <p>
-          The demo uses quote and estimate copy. No real tariffs are published and no
+          The demonstration uses quote and estimate copy. No real tariffs are published and no
           payment is processed.
         </p>
       </ProseSection>
@@ -120,7 +120,7 @@ function TermsEN() {
 
       <ProseSection title="5. Contact">
         <p>
-          Questions about this demo? Contact{" "}
+          Questions about this portfolio demonstration? Contact{" "}
           <a href={`mailto:${BUSINESS.email}`} className="text-yellow-500 underline">
             {BUSINESS.email}
           </a>{" "}

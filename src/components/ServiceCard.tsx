@@ -19,11 +19,11 @@ export default function ServiceCard({
   title,
   description,
   showActions = false,
-  bookLabel = "Boek deze rit",
+  bookLabel = "Plan dit traject",
   whatsappLabel = "Vraag via WhatsApp",
 }: ServiceCardProps) {
   const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(
-    `Hello Northline Private Hire, I would like to request a quote for: ${title}`
+    `Hello Noordlijn Chauffeurs, I would like to request a quote for: ${title}`
   )}`;
 
   return (

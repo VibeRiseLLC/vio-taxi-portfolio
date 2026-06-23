@@ -5,7 +5,7 @@
  * Booking request form — Version 1.
  * - Client-side validation only (no database, no server action)
  * - On valid submit: shows success panel with WhatsApp deep link + mailto fallback
- * - Makes crystal clear that the ride is NOT automatically confirmed
+ * - Makes crystal clear that the journey is NOT automatically confirmed
  */
 
 import { useState, FormEvent, useEffect } from "react";
@@ -49,6 +49,8 @@ export default function BookingForm() {
         destination: params.get("dest") || params.get("destination") || "",
         date: params.get("date") || "",
         time: params.get("time") || "",
+        passengers: params.get("passengers") || "1",
+        notes: params.get("notes") || "",
         rideType: params.get("rideType") || "",
       };
 
@@ -64,10 +66,10 @@ export default function BookingForm() {
   const copy = t.bookPage;
 
   const rideTypeOptions = [
-    { value: "lokale-rit", label: tx(copy.rideTypes.local, lang) },
+    { value: "chauffeurservice", label: tx(copy.rideTypes.local, lang) },
     { value: "luchthaven", label: tx(copy.rideTypes.airport, lang) },
-    { value: "station", label: tx(copy.rideTypes.station, lang) },
-    { value: "ziekenhuis", label: tx(copy.rideTypes.hospital, lang) },
+    { value: "lange-afstand", label: tx(copy.rideTypes.station, lang) },
+    { value: "eelde-airport", label: tx(copy.rideTypes.hospital, lang) },
     { value: "zakelijk", label: tx(copy.rideTypes.business, lang) },
     { value: "anders", label: tx(copy.rideTypes.other, lang) },
   ];
@@ -151,8 +153,8 @@ export default function BookingForm() {
         <p className="text-sm text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-4 py-3 mb-6">
           ⚠️{" "}
           {lang === "nl"
-            ? "Dit is een demo. Er is geen echte rit bevestigd."
-            : "This is a demo. No real ride has been confirmed."}
+            ? "Uw traject is nog niet bevestigd. Wacht op persoonlijke afstemming."
+            : "Your journey is not confirmed yet. Please wait for personal coordination."}
         </p>
         <div className="flex flex-col gap-3">
           <a
@@ -242,7 +244,7 @@ export default function BookingForm() {
           value={form.email}
           onChange={handleChange}
           className={inputClass(false)}
-          placeholder="demo@example.com"
+          placeholder="naam@example.com"
         />
       </Field>
 
@@ -350,7 +352,7 @@ export default function BookingForm() {
         />
       </Field>
 
-      {/* Ride type */}
+      {/* Journey type */}
       <Field
         id="field-rideType"
         label={tx(copy.labelRideType, lang)}
@@ -364,7 +366,7 @@ export default function BookingForm() {
           onChange={handleChange}
           className={inputClass(!!errors.rideType)}
         >
-          <option value="">{lang === "nl" ? "Kies een type rit" : "Select ride type"}</option>
+          <option value="">{lang === "nl" ? "Kies een type traject" : "Select journey type"}</option>
           {rideTypeOptions.map((opt) => (
             <option key={opt.value} value={opt.value}>
               {opt.label}

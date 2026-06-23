@@ -22,7 +22,7 @@ export interface BookingData {
 /** Build a human-readable WhatsApp message from booking form data */
 export function buildWhatsAppUrl(data: BookingData): string {
   const lines = [
-    "Hello Northline Private Hire, I would like to request a ride or quote for this portfolio demo.",
+    "Hello Noordlijn Chauffeurs, I would like to request a chauffeur journey or airport transfer.",
     "",
     `Naam: ${data.name}`,
     `Telefoon: ${data.phone}`,
@@ -33,7 +33,7 @@ export function buildWhatsAppUrl(data: BookingData): string {
     `Tijd: ${data.time}`,
     `Passagiers: ${data.passengers}`,
     data.luggage ? `Bagage: ${data.luggage}` : null,
-    `Type rit: ${data.rideType}`,
+    `Type aanvraag: ${data.rideType}`,
     data.notes ? `Opmerkingen: ${data.notes}` : null,
   ]
     .filter(Boolean)
@@ -45,12 +45,12 @@ export function buildWhatsAppUrl(data: BookingData): string {
 
 /** Build a mailto: link with the same booking details */
 export function buildMailtoUrl(data: BookingData): string {
-  const subject = encodeURIComponent(`Ride request Northline Private Hire - ${data.name}`);
+  const subject = encodeURIComponent(`Chauffeur request Noordlijn Chauffeurs - ${data.name}`);
   const body = encodeURIComponent(
     [
-      "Hello Northline Private Hire,",
+      "Hello Noordlijn Chauffeurs,",
       "",
-      "I would like to request a ride or quote for this portfolio demo:",
+      "I would like to request a chauffeur journey or airport transfer:",
       "",
       `Naam: ${data.name}`,
       `Telefoon: ${data.phone}`,
@@ -61,7 +61,7 @@ export function buildMailtoUrl(data: BookingData): string {
       `Tijd: ${data.time}`,
       `Passagiers: ${data.passengers}`,
       data.luggage ? `Bagage: ${data.luggage}` : null,
-      `Type rit: ${data.rideType}`,
+      `Type aanvraag: ${data.rideType}`,
       data.notes ? `Opmerkingen: ${data.notes}` : null,
     ]
       .filter(Boolean)

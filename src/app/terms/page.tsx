@@ -4,11 +4,11 @@ import TermsPageClient from "@/components/pages/TermsPageClient";
 export const metadata: Metadata = {
   title: "Boekingsvoorwaarden",
   description:
-    "Booking terms for the fictional Northline Private Hire portfolio demo.",
+    "Booking terms for the fictional Noordlijn Chauffeurs portfolio concept.",
   openGraph: {
-    title: "Booking Terms | Northline Private Hire",
+    title: "Booking Terms | Noordlijn Chauffeurs",
     description:
-      "Demo terms explaining that requests do not create real bookings.",
+      "Terms explaining that requests do not create confirmed chauffeur bookings.",
   },
 };
 

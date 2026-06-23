@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import HomePageClient from "@/components/pages/HomePageClient";
 
 export const metadata: Metadata = {
-  title: "Northline Private Hire | Premium Airport Transfers Groningen",
+  title: "Noordlijn Chauffeurs | Premium Chauffeurservice Groningen",
   description:
-    "Portfolio demo for a fictional private-hire company offering premium airport transfers and chauffeur rides from Groningen.",
+    "Fictional portfolio concept for premium chauffeurservice, airport transfers and business travel from Groningen.",
   openGraph: {
-    title: "Northline Private Hire | Premium Airport Transfers Groningen",
+    title: "Noordlijn Chauffeurs | Premium Chauffeurservice Groningen",
     description:
-      "Fictional portfolio website for calm, premium private-hire booking flows.",
+      "Fictional portfolio website for a calm, premium chauffeurservice booking flow.",
   },
 };
 

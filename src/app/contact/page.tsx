@@ -4,11 +4,11 @@ import ContactPageClient from "@/components/pages/ContactPageClient";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Demo contact page for Northline Private Hire, a fictional private-hire portfolio brand.",
+    "Contact actions for the fictional Noordlijn Chauffeurs portfolio concept.",
   openGraph: {
-    title: "Contact | Northline Private Hire",
+    title: "Contact | Noordlijn Chauffeurs",
     description:
-      "Use sample Call, WhatsApp and email actions in this fictional portfolio demo.",
+      "Call, WhatsApp and email actions for a premium chauffeurservice concept.",
   },
 };
 

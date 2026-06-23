@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import BookPageClient from "@/components/pages/BookPageClient";
 
 export const metadata: Metadata = {
-  title: "Book a Ride",
+  title: "Plan a Transfer",
   description:
-    "Compose a demo ride or quote request for Northline Private Hire, a fictional private-hire portfolio brand.",
+    "Plan an airport transfer, business journey or long-distance chauffeur request for the fictional Noordlijn Chauffeurs concept.",
   openGraph: {
-    title: "Book a Ride | Northline Private Hire",
+    title: "Plan a Transfer | Noordlijn Chauffeurs",
     description:
-      "Demo booking flow for airport transfers and private chauffeur rides.",
+      "Chauffeur request flow for airport transfers, business travel and private journeys.",
   },
 };
 

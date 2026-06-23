@@ -1,5 +1,5 @@
 /**
- * Button.tsx — Premium button variants matching the Northline demo brand.
+ * Button.tsx — Premium button variants matching the Noordlijn concept brand.
  * primary  = gold fill, dark text (main CTA)
  * secondary = dark border, cream text
  * ghost    = text only, muted

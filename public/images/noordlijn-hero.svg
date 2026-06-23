@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
-  <title id="title">Northline Private Hire demo chauffeur car</title>
-  <desc id="desc">Stylized, non-photographic placeholder art of a premium private hire car at an airport terminal.</desc>
+  <title id="title">Noordlijn Chauffeurs concept chauffeur car</title>
+  <desc id="desc">Stylized, non-photographic placeholder art of a premium chauffeur car at an airport terminal.</desc>
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="1200" y2="900" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#10172A"/>
-      <stop offset=".55" stop-color="#070B16"/>
+      <stop stop-color="#151E32"/>
+      <stop offset=".58" stop-color="#090E1B"/>
       <stop offset="1" stop-color="#040710"/>
     </linearGradient>
     <linearGradient id="gold" x1="248" y1="422" x2="1030" y2="717" gradientUnits="userSpaceOnUse">
@@ -13,8 +13,8 @@
       <stop offset="1" stop-color="#6C4E1D"/>
     </linearGradient>
     <linearGradient id="car" x1="200" y1="466" x2="1020" y2="760" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#293347"/>
-      <stop offset=".4" stop-color="#0C1220"/>
+      <stop stop-color="#3A455B"/>
+      <stop offset=".42" stop-color="#121A2B"/>
       <stop offset="1" stop-color="#02040A"/>
     </linearGradient>
     <radialGradient id="light" cx="50%" cy="50%" r="50%">
@@ -24,20 +24,18 @@
     </radialGradient>
   </defs>
   <rect width="1200" height="900" fill="url(#sky)"/>
-  <path d="M0 640c218-72 411-99 610-82 221 19 385 95 590 38v304H0V640Z" fill="#050914"/>
-  <path d="M97 176h1006v292H97V176Z" fill="#0D1120" stroke="#1E2A42" stroke-width="3"/>
-  <path d="M154 232h184v176H154V232Zm252 0h184v176H406V232Zm252 0h184v176H658V232Zm252 0h136v176H910V232Z" fill="#121A2D" stroke="#2A3857" stroke-width="3"/>
-  <path d="M150 465h900" stroke="#C8963E" stroke-opacity=".6" stroke-width="5" stroke-linecap="round"/>
-  <path d="M178 560c42-67 102-103 190-110l295-24c90-7 158 19 223 83l52 51 111 28c31 8 53 35 53 67v27H130v-29c0-42 27-79 67-91l-19-2Z" fill="url(#car)" stroke="#2B3651" stroke-width="4"/>
-  <path d="M381 468h268c66 0 120 19 171 68l31 30H275l49-58c15-18 34-32 57-40Z" fill="#172238"/>
-  <path d="M427 482l-42 84h180v-91l-138 7Zm172-7v91h221l-22-22c-50-50-101-69-168-69h-31Z" fill="#26314A"/>
-  <path d="M210 677h818" stroke="#C8963E" stroke-opacity=".45" stroke-width="4"/>
+  <path d="M0 620c218-62 412-82 609-66 219 18 384 82 591 34v312H0V620Z" fill="#050914"/>
+  <path d="M132 464h936" stroke="#C8963E" stroke-opacity=".26" stroke-width="3" stroke-linecap="round"/>
+  <path d="M178 560c42-67 102-103 190-110l295-24c90-7 158 19 223 83l52 51 111 28c31 8 53 35 53 67v27H130v-29c0-42 27-79 67-91l-19-2Z" fill="url(#car)" stroke="#38445E" stroke-width="5"/>
+  <path d="M381 468h268c66 0 120 19 171 68l31 30H275l49-58c15-18 34-32 57-40Z" fill="#1C2940"/>
+  <path d="M427 482l-42 84h180v-91l-138 7Zm172-7v91h221l-22-22c-50-50-101-69-168-69h-31Z" fill="#33405A"/>
+  <path d="M210 677h818" stroke="#C8963E" stroke-opacity=".55" stroke-width="4"/>
   <circle cx="336" cy="691" r="82" fill="#03050A" stroke="#1E2A42" stroke-width="16"/>
   <circle cx="336" cy="691" r="35" fill="#101827" stroke="#C8963E" stroke-opacity=".55" stroke-width="8"/>
   <circle cx="882" cy="691" r="82" fill="#03050A" stroke="#1E2A42" stroke-width="16"/>
   <circle cx="882" cy="691" r="35" fill="#101827" stroke="#C8963E" stroke-opacity=".55" stroke-width="8"/>
-  <ellipse cx="1063" cy="630" rx="85" ry="32" fill="url(#light)" opacity=".55"/>
-  <ellipse cx="186" cy="627" rx="65" ry="24" fill="url(#light)" opacity=".35"/>
+  <ellipse cx="1063" cy="630" rx="85" ry="32" fill="url(#light)" opacity=".64"/>
+  <ellipse cx="186" cy="627" rx="65" ry="24" fill="url(#light)" opacity=".42"/>
   <path d="M478 617h238" stroke="url(#gold)" stroke-width="5" stroke-linecap="round"/>
   <path d="M136 768h927" stroke="#F4EFE3" stroke-opacity=".08" stroke-width="2"/>
   <path d="M210 804h769" stroke="#F4EFE3" stroke-opacity=".05" stroke-width="2"/>

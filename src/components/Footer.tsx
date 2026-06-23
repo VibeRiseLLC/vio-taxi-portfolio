@@ -16,14 +16,14 @@ export default function Footer() {
   const areas = lang === "nl" ? BUSINESS.serviceArea : BUSINESS.serviceAreaEn;
 
   return (
-    <footer style={{ backgroundColor: "#050710", borderTop: "1px solid #1E2A42" }}>
+    <footer className="pb-24 md:pb-0" style={{ backgroundColor: "#050710", borderTop: "1px solid #1E2A42" }}>
       <div className="max-w-6xl mx-auto px-4 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
 
         {/* Brand */}
         <div>
           <div className="flex items-center gap-3 mb-4">
             <Image
-              src="/images/northline-mark.svg"
+              src="/images/noordlijn-mark.svg"
               alt=""
               width={40}
               height={40}
@@ -41,7 +41,7 @@ export default function Footer() {
             {tx(BUSINESS.tagline, lang)}
           </p>
           <p className="text-xs leading-relaxed mt-4" style={{ color: "#6A6560" }}>
-            {BUSINESS.demoNotice}
+            {tx(t.footer.disclaimer, lang)}
           </p>
         </div>
 

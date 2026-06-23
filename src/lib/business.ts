@@ -1,37 +1,37 @@
 /**
  * business.ts
- * Single source of truth for Northline Private Hire demo data.
+ * Single source of truth for Noordlijn Chauffeurs concept data.
  */
 
 export const BUSINESS = {
-  name: "Northline Private Hire",
+  name: "Noordlijn Chauffeurs",
   tagline: {
-    nl: "Premium luchthaventransfers en privechauffeurritten",
-    en: "Premium airport transfers and private chauffeur rides",
+    nl: "Premium chauffeurservice en airport transfers vanuit Groningen",
+    en: "Premium chauffeur service and airport transfers from Groningen",
   },
   location: "Groningen, Netherlands",
   phone: "+31612345678",
   phoneDisplay: "+31 6 1234 5678",
   whatsapp: "31612345678",
   whatsappDisplay: "+31 6 1234 5678",
-  email: "hello@northlineprivatehire.example",
-  domain: "northlineprivatehire.example",
+  email: "hello@noordlijnchauffeurs.example",
+  domain: "noordlijnchauffeurs.example",
   demoNotice:
-    "Portfolio demonstration website. Northline Private Hire is a fictional brand created for design and development showcase purposes.",
+    "Portfolio demonstration website. Noordlijn Chauffeurs is a fictional brand created for design and development showcase purposes.",
   serviceArea: [
     "Groningen",
-    "Haren",
     "Hoogezand",
-    "Sappemeer",
+    "Eelde Airport",
     "Assen",
-    "Schiphol Airport",
+    "Schiphol",
+    "Noord-Nederland",
   ],
   serviceAreaEn: [
     "Groningen",
-    "Haren",
     "Hoogezand",
-    "Sappemeer",
+    "Eelde Airport",
     "Assen",
-    "Schiphol Airport",
+    "Schiphol",
+    "Northern Netherlands",
   ],
 } as const;

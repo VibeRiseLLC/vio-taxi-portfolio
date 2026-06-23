@@ -3,33 +3,34 @@ import "./globals.css";
 import { LanguageProvider } from "@/lib/language-context";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import StickyMobileActions from "@/components/StickyMobileActions";
 import { BUSINESS } from "@/lib/business";
 
 export const metadata: Metadata = {
   title: {
-    default: "Northline Private Hire | Premium Airport Transfers Groningen",
-    template: "%s | Northline Private Hire",
+    default: "Noordlijn Chauffeurs | Premium Chauffeurservice Groningen",
+    template: "%s | Noordlijn Chauffeurs",
   },
   description:
-    "Portfolio demo for Northline Private Hire, a fictional premium private-hire brand for airport transfers and chauffeur rides.",
+    "Fictional portfolio concept for premium chauffeurservice and airport transfers from Groningen, Netherlands.",
   metadataBase: new URL(`https://${BUSINESS.domain}`),
   openGraph: {
     siteName: BUSINESS.name,
     type: "website",
     locale: "nl_NL",
-    title: "Northline Private Hire | Premium Airport Transfers Groningen",
+    title: "Noordlijn Chauffeurs | Premium Chauffeurservice Groningen",
     description:
-      "Fictional portfolio website for premium airport transfers and private chauffeur rides.",
+      "Fictional portfolio concept for premium chauffeurservice, airport transfers and business travel from Groningen.",
   },
 };
 
-/** JSON-LD structured data for Local Business / Taxi Service */
+/** JSON-LD structured data for the fictional LocalBusiness concept. */
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "TaxiService"],
+  "@type": "LocalBusiness",
   name: BUSINESS.name,
   description:
-    "Portfolio demonstration website for a fictional private-hire brand offering premium airport transfer and chauffeur ride concepts.",
+    "Portfolio demonstration website for a fictional chauffeurservice concept offering airport transfers, business travel and long-distance private transport.",
   url: `https://${BUSINESS.domain}`,
   telephone: BUSINESS.phone,
   email: BUSINESS.email,
@@ -59,8 +60,9 @@ export default function RootLayout({
       <body className="antialiased" style={{ backgroundColor: "#080A14", color: "#F2EAD8" }}>
         <LanguageProvider>
           <Header />
-          <main className="min-h-screen">{children}</main>
+          <main className="min-h-screen pb-24 md:pb-0">{children}</main>
           <Footer />
+          <StickyMobileActions />
         </LanguageProvider>
       </body>
     </html>
