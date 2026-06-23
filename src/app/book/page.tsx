@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import BookPageClient from "@/components/pages/BookPageClient";
 
 export const metadata: Metadata = {
-  title: "Rit reserveren",
+  title: "Book a Ride",
   description:
-    "Reserveer een taxi bij VioTaxi in Hoogezand. Vul het formulier in en VioTaxi neemt contact met u op om de rit te bevestigen.",
+    "Compose a demo ride or quote request for Northline Private Hire, a fictional private-hire portfolio brand.",
   openGraph: {
-    title: "Rit reserveren | VioTaxi Hoogezand",
+    title: "Book a Ride | Northline Private Hire",
     description:
-      "Reserveer een taxi in Hoogezand en de regio Groningen. Online aanvragen worden handmatig bevestigd door VioTaxi.",
+      "Demo booking flow for airport transfers and private chauffeur rides.",
   },
 };
 

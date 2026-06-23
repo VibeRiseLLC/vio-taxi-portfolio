@@ -1,29 +1,25 @@
 import type { Metadata } from "next";
-import { Inter, Cinzel } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/lib/language-context";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { BUSINESS } from "@/lib/business";
 
-const inter = Inter({ subsets: ["latin"], display: "swap" });
-const cinzel = Cinzel({ subsets: ["latin"], weight: ["700", "800"], variable: "--font-cinzel", display: "swap" });
-
 export const metadata: Metadata = {
   title: {
-    default: "VioTaxi Hoogezand | Taxi boeken in Hoogezand en regio Groningen",
-    template: "%s | VioTaxi Hoogezand",
+    default: "Northline Private Hire | Premium Airport Transfers Groningen",
+    template: "%s | Northline Private Hire",
   },
   description:
-    "Boek een taxi in Hoogezand, Sappemeer en de regio Groningen. Bel, stuur WhatsApp of reserveer online bij VioTaxi.",
+    "Portfolio demo for Northline Private Hire, a fictional premium private-hire brand for airport transfers and chauffeur rides.",
   metadataBase: new URL(`https://${BUSINESS.domain}`),
   openGraph: {
     siteName: BUSINESS.name,
     type: "website",
     locale: "nl_NL",
-    title: "VioTaxi Hoogezand | Taxi boeken in Hoogezand en regio Groningen",
+    title: "Northline Private Hire | Premium Airport Transfers Groningen",
     description:
-      "Betrouwbare taxi in Hoogezand, Sappemeer en de regio Groningen. Direct contact, lokale service.",
+      "Fictional portfolio website for premium airport transfers and private chauffeur rides.",
   },
 };
 
@@ -33,22 +29,18 @@ const jsonLd = {
   "@type": ["LocalBusiness", "TaxiService"],
   name: BUSINESS.name,
   description:
-    "Betrouwbare taxidienst in Hoogezand en de regio Groningen. Lokale ritten, luchthavenvervoer en meer.",
+    "Portfolio demonstration website for a fictional private-hire brand offering premium airport transfer and chauffeur ride concepts.",
   url: `https://${BUSINESS.domain}`,
   telephone: BUSINESS.phone,
   email: BUSINESS.email,
-  areaServed: [
-    "Hoogezand",
-    "Sappemeer",
-    "Foxhol",
-    "Kropswolde",
-    "Westerbroek",
-    "Zuidbroek",
-    "Veendam",
-    "Groningen",
-  ],
-  // Note: address, coordinates, openingHours, and priceRange are intentionally
-  // omitted in Version 1 — add them when the business owner confirms the details.
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Groningen",
+    addressCountry: "NL",
+  },
+  areaServed: BUSINESS.serviceAreaEn,
+  disambiguatingDescription:
+    "Fictional brand created for design and development showcase purposes. No aggregate ratings, review markup, awards, or licence claims are included.",
 };
 
 export default function RootLayout({
@@ -57,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="nl" className={`${inter.className} ${cinzel.variable}`}>
+    <html lang="nl">
       <head>
         <script
           type="application/ld+json"

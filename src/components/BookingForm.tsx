@@ -151,8 +151,8 @@ export default function BookingForm() {
         <p className="text-sm text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-4 py-3 mb-6">
           ⚠️{" "}
           {lang === "nl"
-            ? "Uw rit is nog NIET bevestigd. VioTaxi neemt contact met u op."
-            : "Your ride is NOT yet confirmed. VioTaxi will contact you."}
+            ? "Dit is een demo. Er is geen echte rit bevestigd."
+            : "This is a demo. No real ride has been confirmed."}
         </p>
         <div className="flex flex-col gap-3">
           <a
@@ -242,7 +242,7 @@ export default function BookingForm() {
           value={form.email}
           onChange={handleChange}
           className={inputClass(false)}
-          placeholder="jan@voorbeeld.nl"
+          placeholder="demo@example.com"
         />
       </Field>
 
@@ -260,7 +260,7 @@ export default function BookingForm() {
           value={form.pickup}
           onChange={handleChange}
           className={inputClass(!!errors.pickup)}
-          placeholder="Dorpsstraat 1, Hoogezand"
+          placeholder="Grote Markt, Groningen"
         />
       </Field>
 
@@ -278,7 +278,7 @@ export default function BookingForm() {
           value={form.destination}
           onChange={handleChange}
           className={inputClass(!!errors.destination)}
-          placeholder="Groningen Centraal"
+          placeholder="Schiphol Airport"
         />
       </Field>
 

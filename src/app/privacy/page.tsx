@@ -4,11 +4,11 @@ import PrivacyPageClient from "@/components/pages/PrivacyPageClient";
 export const metadata: Metadata = {
   title: "Privacyverklaring",
   description:
-    "Privacyverklaring van VioTaxi. Welke gegevens worden verzameld bij een ritaanvraag en hoe worden ze gebruikt.",
+    "Privacy policy for the fictional Northline Private Hire portfolio demo.",
   openGraph: {
-    title: "Privacyverklaring | VioTaxi Hoogezand",
+    title: "Privacy Policy | Northline Private Hire",
     description:
-      "Hoe VioTaxi omgaat met uw persoonsgegevens bij het indienen van een ritaanvraag.",
+      "How demo ride-request data is handled in this fictional portfolio website.",
   },
 };
 

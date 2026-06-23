@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import HomePageClient from "@/components/pages/HomePageClient";
 
 export const metadata: Metadata = {
-  title: "VioTaxi Hoogezand | Taxi boeken in Hoogezand en regio Groningen",
+  title: "Northline Private Hire | Premium Airport Transfers Groningen",
   description:
-    "Boek een taxi in Hoogezand, Sappemeer en de regio Groningen. Bel, stuur WhatsApp of reserveer online bij VioTaxi.",
+    "Portfolio demo for a fictional private-hire company offering premium airport transfers and chauffeur rides from Groningen.",
   openGraph: {
-    title: "VioTaxi Hoogezand | Taxi boeken in Hoogezand en regio Groningen",
+    title: "Northline Private Hire | Premium Airport Transfers Groningen",
     description:
-      "Betrouwbare taxi in Hoogezand, Sappemeer en de regio Groningen. Direct contact, lokale service.",
+      "Fictional portfolio website for calm, premium private-hire booking flows.",
   },
 };
 

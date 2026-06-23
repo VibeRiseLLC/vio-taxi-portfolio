@@ -1,46 +1,37 @@
 /**
  * business.ts
- * Single source of truth for all VioTaxi business data.
- * Update this file when real business details are confirmed.
+ * Single source of truth for Northline Private Hire demo data.
  */
 
 export const BUSINESS = {
-  name: "VioTaxi",
+  name: "Northline Private Hire",
   tagline: {
-    nl: "Betrouwbare taxi in Hoogezand en de regio Groningen",
-    en: "Reliable taxi service in Hoogezand and the Groningen region",
+    nl: "Premium luchthaventransfers en privechauffeurritten",
+    en: "Premium airport transfers and private chauffeur rides",
   },
-  location: "Hoogezand, Nederland",
-  phone: "+31619177707",
-  phoneDisplay: "+31 6 19177707",
-  whatsapp: "31619177707", // Format for wa.me (no + prefix)
-  whatsappDisplay: "+31 6 19177707",
-  email: "info@viotaxi.nl",
-  domain: "viotaxi.nl",
-  googleRating: "5.0",
-  reviewCount: 6,
+  location: "Groningen, Netherlands",
+  phone: "+31612345678",
+  phoneDisplay: "+31 6 1234 5678",
+  whatsapp: "31612345678",
+  whatsappDisplay: "+31 6 1234 5678",
+  email: "hello@northlineprivatehire.example",
+  domain: "northlineprivatehire.example",
+  demoNotice:
+    "Portfolio demonstration website. Northline Private Hire is a fictional brand created for design and development showcase purposes.",
   serviceArea: [
+    "Groningen",
+    "Haren",
     "Hoogezand",
     "Sappemeer",
-    "Foxhol",
-    "Kropswolde",
-    "Westerbroek",
-    "Zuidbroek",
-    "Veendam",
-    "Groningen",
-    "Groningen Airport Eelde",
-    "Schiphol (op aanvraag)",
+    "Assen",
+    "Schiphol Airport",
   ],
   serviceAreaEn: [
+    "Groningen",
+    "Haren",
     "Hoogezand",
     "Sappemeer",
-    "Foxhol",
-    "Kropswolde",
-    "Westerbroek",
-    "Zuidbroek",
-    "Veendam",
-    "Groningen",
-    "Groningen Airport Eelde",
-    "Schiphol (on request)",
+    "Assen",
+    "Schiphol Airport",
   ],
 } as const;

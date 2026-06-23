@@ -1,9 +1,7 @@
 "use client";
 
 /**
- * HomePageClient.tsx — Premium VioTaxi homepage.
- * Mobile hero: split-composition with dark left text zone + Vio/car revealed on right.
- * ALL text + buttons stay inside the left content zone. Nothing overlaps Vio.
+ * HomePageClient.tsx — Premium Northline Private Hire demo homepage.
  */
 
 import Image from "next/image";
@@ -73,8 +71,8 @@ export default function HomePageClient() {
             {/* 1. Image layer (Right-side only) */}
             <div className="mobile-hero-art">
               <Image
-                src="/images/vio-exterior.jpg"
-                alt="VioTaxi persoonlijke chauffeur"
+                src="/images/northline-hero.svg"
+                alt="Northline Private Hire demo vehicle artwork"
                 width={900}
                 height={1400}
                 sizes="100vw"
@@ -100,9 +98,9 @@ export default function HomePageClient() {
                   }}
                 >
                   {lang === "nl" ? (
-                    <>Persoonlijke taxi<br />in <span style={{ color: "#D2A43A", textShadow: "0 0 15px rgba(210,164,58,0.25)" }}>Groningen</span> &amp;<br />Hoogezand</>
+                    <>Private hire<br />vanuit <span style={{ color: "#D2A43A", textShadow: "0 0 15px rgba(210,164,58,0.25)" }}>Groningen</span><br />naar Schiphol</>
                   ) : (
-                    <>Private taxi<br />in <span style={{ color: "#D2A43A", textShadow: "0 0 15px rgba(210,164,58,0.25)" }}>Groningen</span> &amp;<br />Hoogezand</>
+                    <>Private hire<br />from <span style={{ color: "#D2A43A", textShadow: "0 0 15px rgba(210,164,58,0.25)" }}>Groningen</span><br />to Schiphol</>
                   )}
                 </h1>
 
@@ -115,9 +113,9 @@ export default function HomePageClient() {
                   marginBottom: 26,
                 }}>
                   {lang === "nl" ? (
-                    <>Comfortabele ritten, luchthavenvervoer en zakelijke afspraken — met een vaste, betrouwbare chauffeur.</>
+                    <>Premium airport transfers en privechauffeurritten — helder gepland, rustig uitgevoerd.</>
                   ) : (
-                    <>Comfortable rides, airport transfers and business appointments — with a trusted regular driver.</>
+                    <>Premium airport transfers and private chauffeur rides — clearly planned, calmly delivered.</>
                   )}
                 </p>
               </div>
@@ -170,8 +168,8 @@ export default function HomePageClient() {
                 <Icon d={ICONS.clock} size={15} color="#D2A43A" sw={2} />
                 <span>
                   {lang === "nl"
-                    ? "24/7 beschikbaar · Direct via WhatsApp · Groningen & omgeving"
-                    : "24/7 available · Direct via WhatsApp · Groningen region"}
+                    ? "Demo-contact · Direct via WhatsApp · Groningen en Schiphol"
+                    : "Demo contact · Direct via WhatsApp · Groningen and Schiphol"}
                 </span>
               </div>
 
@@ -220,13 +218,13 @@ export default function HomePageClient() {
             left: "4%", top: "50%", transform: "translateY(-50%)",
             fontSize: "clamp(8rem,24vw,28rem)", fontWeight: 900, lineHeight: 1,
             letterSpacing: "-0.06em", color: "rgba(244,239,227,0.018)", userSelect: "none",
-          }} aria-hidden="true">VIO</div>
+          }} aria-hidden="true">NORTH</div>
 
           <div className="max-w-6xl mx-auto px-4 pt-12 pb-16 grid grid-cols-[1fr_0.9fr] gap-12 items-center relative z-10">
             <div className="flex flex-col items-start text-left gap-3.5 w-full">
               <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border"
                 style={{ backgroundColor: C.goldDim, borderColor: "rgba(210,164,58,0.25)" }}>
-                <Image src="/images/viotaxi-logo.jpg" alt="" width={20} height={20}
+                <Image src="/images/northline-mark.svg" alt="" width={20} height={20}
                   className="w-4.5 h-4.5 rounded-full object-cover border border-[#C8963E]/30 shrink-0" />
                 <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: C.muted }}>
                   {tx(t.hero.trustBadge, lang)}
@@ -270,7 +268,7 @@ export default function HomePageClient() {
                   {tx(t.hero.popularRides, lang)}
                 </span>
                 <div className="flex flex-wrap gap-1.5 max-w-2xl">
-                  {["Groningen Airport Eelde","UMCG","Martini Ziekenhuis","Station Groningen","Zernike","Schiphol"].map((dest) => (
+                  {["Groningen","Haren","Hoogezand","Sappemeer","Assen","Schiphol Airport"].map((dest) => (
                     <a key={dest} href={`/book?dest=${encodeURIComponent(dest)}`}
                       className="px-2.5 py-1.5 rounded-lg border text-[11px] font-medium transition-all duration-200 hover:scale-[1.03] select-none"
                       style={{ backgroundColor: "rgba(210,164,58,0.03)", borderColor: "rgba(210,164,58,0.16)", color: "rgba(244,239,227,0.8)" }}
@@ -285,11 +283,11 @@ export default function HomePageClient() {
               <div className="relative w-full max-w-md lg:max-w-lg rounded-2xl overflow-hidden"
                 style={{ border: `1px solid ${C.borderGold}`, boxShadow: "0 10px 40px -10px rgba(0,0,0,0.40)" }}>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#080A14] via-[#080A14]/20 to-transparent z-10 pointer-events-none opacity-90" aria-hidden="true" />
-                <Image src="/images/vio-exterior.jpg" alt="VioTaxi chauffeur Hoogezand" width={800} height={600} className="w-full h-auto block" priority />
+                <Image src="/images/northline-hero.svg" alt="Northline Private Hire airport transfer demo artwork" width={800} height={600} className="w-full h-auto block" priority />
                 <div className="absolute bottom-4 left-5 right-5 z-20 flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: C.gold }} aria-hidden="true" />
                   <p className="text-xs font-medium tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" style={{ color: C.cream }}>
-                    VioTaxi Hoogezand · persoonlijk vervoer
+                    Northline Private Hire · portfolio demo
                   </p>
                 </div>
               </div>
@@ -328,13 +326,13 @@ export default function HomePageClient() {
       />
 
       {/* ══════════════════════════════════════════════════════════════
-          SECTION 4: MEET YOUR DRIVER — personal trust with photo
+          SECTION 4: DEMO POSITIONING — personal trust with visual
       ══════════════════════════════════════════════════════════════ */}
       <section className="py-20 px-4 md:px-6" style={{ backgroundColor: C.dark, borderBottom: `1px solid ${C.border}` }}>
         <div className="max-w-6xl mx-auto grid md:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
           <div className="flex flex-col items-start gap-5">
             <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: C.gold }}>
-              {lang === "nl" ? "Uw chauffeur" : "Your driver"}
+              {lang === "nl" ? "Private hire demo" : "Private hire demo"}
             </p>
             <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight leading-snug" style={{ color: C.cream }}>{tx(t.meetDriver.heading, lang)}</h2>
             <p className="text-[15px] leading-relaxed" style={{ color: C.muted, fontWeight: 420 }}>{tx(t.meetDriver.body, lang)}</p>
@@ -366,7 +364,7 @@ export default function HomePageClient() {
           </div>
           <div className="w-full flex justify-center">
             <div className="relative w-full max-w-[360px] md:max-w-md lg:max-w-[420px] rounded-2xl overflow-hidden" style={{ border: `1px solid rgba(210,164,58,0.20)` }}>
-              <Image src="/images/vio-exterior.jpg" alt="Chauffeur VioTaxi" width={600} height={600}
+              <Image src="/images/northline-hero.svg" alt="Northline demo chauffeur service artwork" width={600} height={600}
                 className="w-full aspect-square md:aspect-[4/5] object-cover" style={{ objectPosition: "25% center" }} />
             </div>
           </div>
@@ -425,16 +423,16 @@ export default function HomePageClient() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════
-          SECTION 7: MERCEDES COMFORT — visual break
+          SECTION 7: PREMIUM COMFORT — visual break
       ══════════════════════════════════════════════════════════════ */}
       <section className="py-20 px-4 md:px-6 relative overflow-hidden" style={{ backgroundColor: C.navy, borderTop: `1px solid ${C.border}`, borderBottom: `1px solid ${C.border}` }}>
         <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 70% 50%, rgba(210,164,58,0.04) 0%, transparent 70%)" }} aria-hidden="true" />
         <div className="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center gap-6">
-          <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: C.gold }}>Mercedes</p>
+          <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: C.gold }}>Comfort</p>
           <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight" style={{ color: C.cream }}>{tx(t.mercedes.heading, lang)}</h2>
           <p className="text-[15px] leading-relaxed max-w-2xl" style={{ color: C.muted, fontWeight: 420 }}>{tx(t.mercedes.body, lang)}</p>
           <div className="mt-2 rounded-2xl overflow-hidden w-full max-w-lg" style={{ border: `1px solid ${C.border}`, boxShadow: "0 0 32px rgba(0,0,0,0.2)" }}>
-            <Image src="/images/mercedes-interior.jpg" alt="Mercedes interieur — VioTaxi" width={620} height={320} className="w-full h-56 object-cover" />
+            <Image src="/images/northline-interior.svg" alt="Northline Private Hire demo interior artwork" width={620} height={320} className="w-full h-56 object-cover" />
           </div>
         </div>
       </section>
@@ -458,7 +456,7 @@ export default function HomePageClient() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════
-          SECTION 9: WHY VIOTAXI — reason cards
+          SECTION 9: WHY NORTHLINE — reason cards
       ══════════════════════════════════════════════════════════════ */}
       <section className="py-16 px-4 md:px-6" style={{ backgroundColor: C.navy, borderTop: `1px solid ${C.border}` }}>
         <div className="max-w-6xl mx-auto">
@@ -487,6 +485,40 @@ export default function HomePageClient() {
       />
 
       {/* ══════════════════════════════════════════════════════════════
+          SECTION 10B: FICTIONAL DEMO TESTIMONIALS
+      ══════════════════════════════════════════════════════════════ */}
+      <section className="py-16 px-4 md:px-6" style={{ backgroundColor: C.dark, borderTop: `1px solid ${C.border}` }}>
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-2xl mx-auto text-center mb-8">
+            <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: C.gold }}>
+              {lang === "nl" ? "Geen echte reviews" : "No real reviews"}
+            </p>
+            <h2 className="text-2xl font-bold tracking-tight mb-3" style={{ color: C.cream }}>
+              {tx(t.testimonials.heading, lang)}
+            </h2>
+            <p className="text-sm leading-relaxed" style={{ color: C.muted }}>
+              {tx(t.testimonials.intro, lang)}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {t.testimonials.items.map((item) => (
+              <article key={tx(item.author, lang)} className="rounded-2xl p-5" style={{ backgroundColor: C.navy, border: `1px solid ${C.border}` }}>
+                <p className="text-[11px] font-bold uppercase tracking-widest mb-4" style={{ color: C.gold }}>
+                  {lang === "nl" ? "Fictionele demo-tekst" : "Fictional demo copy"}
+                </p>
+                <p className="text-sm leading-relaxed mb-5" style={{ color: C.muted }}>
+                  &quot;{tx(item.quote, lang)}&quot;
+                </p>
+                <p className="text-xs font-semibold" style={{ color: C.cream }}>
+                  {tx(item.author, lang)}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════════
           SECTION 11: FINAL CTA — visually distinct booking block
           Slightly different background with subtle gold ambient glow
           to break away from the identical dark card pattern.
@@ -502,25 +534,23 @@ export default function HomePageClient() {
 
         <div className="relative z-10 max-w-2xl mx-auto text-center flex flex-col items-center gap-6">
           <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight" style={{ color: C.cream }}>
-            {lang === "nl" ? "Reis comfortabel met VioTaxi" : "Travel comfortably with VioTaxi"}
+            {tx(t.finalCta.heading, lang)}
           </h2>
           <p className="text-[15px] leading-relaxed" style={{ color: C.muted, fontWeight: 420 }}>
-            {lang === "nl"
-              ? "Plan uw rit eenvoudig en reis met een persoonlijke chauffeur in Groningen, Hoogezand en omgeving."
-              : "Plan your ride easily and travel with a personal chauffeur in Groningen, Hoogezand and the surrounding area."}
+            {tx(t.finalCta.sub, lang)}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center pt-4">
             <a href="/book" id="final-book-btn"
               className="inline-flex items-center justify-center gap-2.5 rounded-xl font-bold transition-all hover:scale-105 active:scale-95 w-full sm:w-auto text-center"
               style={{ backgroundColor: C.gold, color: C.bg, padding: "16px 36px", fontSize: "1.0625rem", minHeight: 54, boxShadow: "0 4px 16px rgba(210,164,58,0.20)" }}>
               <Icon d={ICONS.calendar} size={18} color={C.bg} sw={2.5} />
-              {lang === "nl" ? "Rit reserveren" : "Book your ride"}
+              {tx(t.finalCta.ctaBook, lang)}
             </a>
             <a href={`https://wa.me/${BUSINESS.whatsapp}`} id="final-whatsapp-btn" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2.5 rounded-xl font-semibold transition-all hover:scale-105 active:scale-95 w-full sm:w-auto text-center"
               style={{ backgroundColor: "rgba(210,164,58,0.06)", color: C.gold, border: `1.5px solid ${C.gold}`, padding: "16px 32px", fontSize: "1rem", minHeight: 54 }}>
               <svg width="18" height="18" viewBox="0 0 32 32" fill="currentColor" className="shrink-0 text-green-400" aria-hidden="true"><path d={WA_PATH} /></svg>
-              {lang === "nl" ? "WhatsApp" : "WhatsApp"}
+              {tx(t.finalCta.ctaWhatsapp, lang)}
             </a>
           </div>
         </div>

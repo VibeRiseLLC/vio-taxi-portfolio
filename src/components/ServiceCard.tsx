@@ -23,7 +23,7 @@ export default function ServiceCard({
   whatsappLabel = "Vraag via WhatsApp",
 }: ServiceCardProps) {
   const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(
-    `Hallo VioTaxi, ik wil meer informatie over: ${title}`
+    `Hello Northline Private Hire, I would like to request a quote for: ${title}`
   )}`;
 
   return (

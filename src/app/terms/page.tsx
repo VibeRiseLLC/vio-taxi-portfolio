@@ -4,11 +4,11 @@ import TermsPageClient from "@/components/pages/TermsPageClient";
 export const metadata: Metadata = {
   title: "Boekingsvoorwaarden",
   description:
-    "Boekingsvoorwaarden van VioTaxi. Online ritaanvragen zijn geen automatische bevestigingen. VioTaxi neemt contact op na ontvangst.",
+    "Booking terms for the fictional Northline Private Hire portfolio demo.",
   openGraph: {
-    title: "Boekingsvoorwaarden | VioTaxi Hoogezand",
+    title: "Booking Terms | Northline Private Hire",
     description:
-      "Lees de boekingsvoorwaarden van VioTaxi voordat u een ritaanvraag indient.",
+      "Demo terms explaining that requests do not create real bookings.",
   },
 };
 

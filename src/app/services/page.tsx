@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import ServicesPageClient from "@/components/pages/ServicesPageClient";
 
 export const metadata: Metadata = {
-  title: "Taxidiensten",
+  title: "Services",
   description:
-    "Ontdek de taxidiensten van VioTaxi: lokale ritten, luchthavenvervoer, station, ziekenhuisafspraken, zakelijk vervoer en meer in Hoogezand en de regio Groningen.",
+    "Explore fictional Northline Private Hire services for premium airport transfers, business rides and private chauffeur trips.",
   openGraph: {
-    title: "Taxidiensten | VioTaxi Hoogezand",
+    title: "Services | Northline Private Hire",
     description:
-      "Lokale taxiritten, luchthavenvervoer, zakelijk vervoer en meer in Hoogezand en de regio Groningen.",
+      "Fictional service overview for a polished private-hire portfolio demo.",
   },
 };
 

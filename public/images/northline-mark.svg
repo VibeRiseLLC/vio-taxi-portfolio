@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Northline Private Hire demo mark</title>
+  <desc id="desc">A fictional monogram logo for a portfolio demonstration brand.</desc>
+  <defs>
+    <linearGradient id="gold" x1="32" y1="20" x2="132" y2="142" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0D37A"/>
+      <stop offset=".5" stop-color="#C8963E"/>
+      <stop offset="1" stop-color="#7A5A22"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="42%" r="60%">
+      <stop stop-color="#1E2A42"/>
+      <stop offset="1" stop-color="#050914"/>
+    </radialGradient>
+  </defs>
+  <rect width="160" height="160" rx="34" fill="url(#glow)"/>
+  <path d="M38 112V48h17l50 39V48h17v64h-15L55 72v40H38Z" fill="url(#gold)"/>
+  <path d="M39 124h82" stroke="#F4EFE3" stroke-opacity=".45" stroke-width="4" stroke-linecap="round"/>
+  <path d="M37 36h86" stroke="#C8963E" stroke-opacity=".5" stroke-width="2" stroke-linecap="round"/>
+</svg>

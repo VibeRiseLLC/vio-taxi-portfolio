@@ -6,7 +6,7 @@ import type { Lang } from "@/lib/translations";
 declare global {
   interface Window {
     google?: GoogleNamespace;
-    __vioGoogleMapsPromise?: Promise<GoogleNamespace>;
+    __northlineGoogleMapsPromise?: Promise<GoogleNamespace>;
   }
 }
 
@@ -95,12 +95,12 @@ function loadGoogleMaps(apiKey: string): Promise<GoogleNamespace> {
     return Promise.resolve(window.google);
   }
 
-  if (window.__vioGoogleMapsPromise) {
-    return window.__vioGoogleMapsPromise;
+  if (window.__northlineGoogleMapsPromise) {
+    return window.__northlineGoogleMapsPromise;
   }
 
-  window.__vioGoogleMapsPromise = new Promise((resolve, reject) => {
-    const existingScript = document.querySelector<HTMLScriptElement>("script[data-vio-google-maps='true']");
+  window.__northlineGoogleMapsPromise = new Promise((resolve, reject) => {
+    const existingScript = document.querySelector<HTMLScriptElement>("script[data-northline-google-maps='true']");
     if (existingScript) {
       existingScript.addEventListener("load", () => window.google ? resolve(window.google) : reject(new Error("Google Maps failed to initialize")));
       existingScript.addEventListener("error", () => reject(new Error("Google Maps script failed to load")));
@@ -111,13 +111,13 @@ function loadGoogleMaps(apiKey: string): Promise<GoogleNamespace> {
     script.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(apiKey)}&libraries=places&language=nl&region=NL`;
     script.async = true;
     script.defer = true;
-    script.dataset.vioGoogleMaps = "true";
+    script.dataset.northlineGoogleMaps = "true";
     script.addEventListener("load", () => window.google ? resolve(window.google) : reject(new Error("Google Maps failed to initialize")));
     script.addEventListener("error", () => reject(new Error("Google Maps script failed to load")));
     document.head.appendChild(script);
   });
 
-  return window.__vioGoogleMapsPromise;
+  return window.__northlineGoogleMapsPromise;
 }
 
 function placeLabel(place: GooglePlace) {
@@ -407,8 +407,8 @@ export default function QuickBookingSection({ lang }: { lang: Lang }) {
               </h2>
               <p className="max-w-xl text-sm leading-relaxed md:text-[15px]" style={{ color: C.muted, fontWeight: 420 }}>
                 {lang === "nl"
-                  ? "Kies uw locaties via Google Places, bekijk de route op de kaart en stuur uw aanvraag naar VioTaxi."
-                  : "Choose locations with Google Places, preview the route on the map and send your request to VioTaxi."}
+                  ? "Kies uw locaties via Google Places, bekijk de route op de kaart en stel uw Northline-demoaanvraag samen."
+                  : "Choose locations with Google Places, preview the route on the map and compose your Northline demo request."}
               </p>
             </div>
 

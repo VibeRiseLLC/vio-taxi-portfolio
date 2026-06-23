@@ -2,7 +2,6 @@
 
 /**
  * Header.tsx — Premium dark navigation.
- * Uses the real VioTaxi logo image. Falls back to text if image fails.
  */
 
 import Link from "next/link";
@@ -45,8 +44,8 @@ export default function Header() {
           </svg>
           <span className="text-[11px] tracking-wide" style={{ color: "#C9C3B8" }}>
             {lang === "nl"
-              ? "Lokale taxi uit Hoogezand & Groningen"
-              : "Local taxi from Hoogezand & Groningen"}
+              ? "Premium private hire demo uit Groningen"
+              : "Premium private hire demo from Groningen"}
           </span>
         </div>
       </div>
@@ -65,7 +64,7 @@ export default function Header() {
           <Link
             href="/"
             className="flex items-center gap-2.5 focus-visible:outline-none group"
-            aria-label="VioTaxi — terug naar home"
+            aria-label="Northline Private Hire - terug naar home"
           >
             {/* Circular logo icon */}
             <div
@@ -79,7 +78,7 @@ export default function Header() {
               }}
             >
               <Image
-                src="/images/viotaxi-logo.jpg"
+                src="/images/northline-mark.svg"
                 alt=""
                 width={40}
                 height={40}
@@ -97,20 +96,19 @@ export default function Header() {
 
             {/* Wordmark — refined, letter-spaced, no bold weight */}
             <div className="flex flex-col items-start select-none leading-none">
-              {/* "Vio | Taxi" wordmark */}
               <span className="flex items-center gap-[6px]">
                 <span
-                  className="header-word-vio font-cinzel text-[15px] md:text-[16px] font-bold tracking-[0.18em] uppercase transition-colors duration-300"
+                  className="header-word-north font-cinzel text-[15px] md:text-[16px] font-bold tracking-[0.18em] uppercase transition-colors duration-300"
                   style={{ color: "#C8963E" }}
                 >
-                  Vio
+                  North
                 </span>
                 <span className="text-xs opacity-40 font-light" style={{ color: "#C8963E" }}>|</span>
                 <span
-                  className="header-word-taxi font-cinzel text-[15px] md:text-[16px] font-light tracking-[0.22em] uppercase transition-colors duration-300"
+                  className="header-word-line font-cinzel text-[15px] md:text-[16px] font-light tracking-[0.22em] uppercase transition-colors duration-300"
                   style={{ color: "#F2EAD8" }}
                 >
-                  Taxi
+                  Line
                 </span>
               </span>
               {/* Subtle bottom rule */}
@@ -181,7 +179,7 @@ export default function Header() {
               <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3} className="shrink-0 text-[#080A14]" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              <span>Bel: {BUSINESS.phoneDisplay}</span>
+              <span>{lang === "nl" ? "Bel nu" : "Call Now"}: {BUSINESS.phoneDisplay}</span>
             </a>
           </nav>
 

@@ -170,7 +170,7 @@ export default function ContactPageClient() {
                 : "Map link — to be configured by the business owner."}
             </p>
             <a
-              href="https://www.google.com/maps/search/taxi+hoogezand"
+              href="https://www.google.com/maps/search/Groningen+Netherlands"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm font-medium underline transition-colors"

@@ -23,15 +23,15 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-3 mb-4">
             <Image
-              src="/images/viotaxi-logo.jpg"
-              alt="VioTaxi logo"
+              src="/images/northline-mark.svg"
+              alt=""
               width={40}
               height={40}
               className="rounded-lg object-cover"
             />
             <div>
-              <p className="font-bold text-base" style={{ color: "#C8963E" }}>VioTaxi</p>
-              <p className="text-xs" style={{ color: "#4A4840" }}>Hoogezand</p>
+              <p className="font-bold text-base" style={{ color: "#C8963E" }}>{BUSINESS.name}</p>
+              <p className="text-xs" style={{ color: "#4A4840" }}>{BUSINESS.location}</p>
             </div>
           </div>
           <p className="text-sm leading-relaxed mb-3" style={{ color: "#6A6560" }}>
@@ -39,6 +39,9 @@ export default function Footer() {
           </p>
           <p className="text-xs" style={{ color: "#4A4840" }}>
             {tx(BUSINESS.tagline, lang)}
+          </p>
+          <p className="text-xs leading-relaxed mt-4" style={{ color: "#6A6560" }}>
+            {BUSINESS.demoNotice}
           </p>
         </div>
 

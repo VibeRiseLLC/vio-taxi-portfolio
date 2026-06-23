@@ -1,7 +1,7 @@
 /**
  * translations.ts
- * All visible copy for the website in Dutch (nl) and English (en).
- * Keep business data (phone, email) in business.ts — only copy/text here.
+ * Visible copy for the fictional Northline Private Hire portfolio demo.
+ * Keep business data (phone, email, service area) in business.ts.
  */
 
 export type Lang = "nl" | "en";
@@ -9,70 +9,70 @@ export type Lang = "nl" | "en";
 export const t = {
   nav: {
     home: { nl: "Home", en: "Home" },
-    book: { nl: "Rit reserveren", en: "Reserve a Ride" },
-    services: { nl: "Onze diensten", en: "Our Services" },
+    book: { nl: "Rit boeken", en: "Book a Ride" },
+    services: { nl: "Diensten", en: "Services" },
     contact: { nl: "Contact", en: "Contact" },
   },
 
   hero: {
     title: {
-      nl: "Comfortabel taxivervoer in Groningen & Hoogezand",
-      en: "Comfortable taxi service in Groningen & Hoogezand",
+      nl: "Premium private hire vanuit Groningen",
+      en: "Premium private hire from Groningen",
     },
     subtitle: {
-      nl: "Reis met een ervaren persoonlijke chauffeur die de regio Groningen en routes door heel Nederland goed kent.",
-      en: "Travel with a personal chauffeur who knows the Groningen region and routes throughout the Netherlands.",
+      nl: "Rustige luchthaventransfers en privechauffeurritten voor reizigers die duidelijke afspraken, comfort en discretie waarderen.",
+      en: "Calm airport transfers and private chauffeur rides for passengers who value clear planning, comfort and discretion.",
     },
     support: {
-      nl: "Voor lokale ritten, luchthavenvervoer, zakelijke afspraken en vervoer op afspraak.",
-      en: "For local rides, airport transfers, business appointments and planned transport.",
+      nl: "Voor Schiphol Airport, zakelijke afspraken, hotels en geplande ritten in Noord-Nederland.",
+      en: "For Schiphol Airport, business appointments, hotels and planned rides across the North of the Netherlands.",
     },
-    ctaCall: { nl: "Bel nu", en: "Call now" },
-    ctaWhatsapp: { nl: "WhatsApp", en: "WhatsApp" },
-    ctaBook: { nl: "Rit reserveren", en: "Reserve a Ride" },
+    ctaCall: { nl: "Bel nu", en: "Call Now" },
+    ctaWhatsapp: { nl: "WhatsApp ons", en: "WhatsApp Us" },
+    ctaBook: { nl: "Rit boeken", en: "Book a Ride" },
     urgentNote: {
-      nl: "Beschikbaar voor luchthavenvervoer, zakelijke reizen en privé ritten.",
-      en: "Available for airport transfers, business travel and private rides.",
+      nl: "Beschikbaar op aanvraag voor luchthavenvervoer, zakelijke ritten en privevervoer.",
+      en: "Available by request for airport transfers, business rides and private travel.",
     },
     trustBadge: {
-      nl: "Persoonlijk vervoer op afspraak",
-      en: "Personal transport by appointment",
+      nl: "Fictionele portfolio demo",
+      en: "Fictional portfolio demo",
     },
     popularRides: {
-      nl: "Veelgevraagde ritten:",
-      en: "Popular destinations:",
+      nl: "Voorbeeldroutes:",
+      en: "Sample routes:",
     },
     ctaMicrocopy: {
-      nl: "Spoedrit? Bel direct. Rit vooruit plannen? Stuur WhatsApp of reserveer online.",
-      en: "Urgent ride? Call directly. Planning ahead? Send WhatsApp or reserve online.",
+      nl: "Plan vooruit via het formulier of neem direct contact op voor een offerte.",
+      en: "Plan ahead with the form or contact us directly for a quote.",
     },
   },
 
   trustStrip: {
     items: [
       {
-        icon: "👨‍✈️",
-        label: { nl: "Ervaren chauffeur", en: "Experienced driver" },
-      },
-      {
-        icon: "🚗",
-        label: { nl: "Mercedes comfort", en: "Mercedes comfort" },
-      },
-      {
         icon: "✈️",
-        label: { nl: "Luchthavenvervoer", en: "Airport transfers" },
+        label: { nl: "Luchthaventransfers", en: "Airport transfers" },
       },
       {
-        icon: "✨",
-        label: { nl: "Persoonlijk vervoer", en: "Personal transport" },
+        icon: "🕰️",
+        label: { nl: "Gepland vervoer", en: "Planned rides" },
+      },
+      {
+        icon: "💼",
+        label: { nl: "Zakelijke afspraken", en: "Business appointments" },
+      },
+      {
+        icon: "🧳",
+        label: { nl: "Bagagevriendelijk", en: "Luggage friendly" },
       },
       {
         icon: "📍",
-        label: { nl: "Regio Groningen", en: "Groningen based" },
+        label: { nl: "Groningen basis", en: "Groningen based" },
       },
       {
         icon: "📱",
-        label: { nl: "Eenvoudig boeken", en: "Easy booking" },
+        label: { nl: "Duidelijke bevestiging", en: "Clear confirmation" },
       },
     ],
   },
@@ -81,179 +81,222 @@ export const t = {
     heading: { nl: "Hoe het werkt", en: "How it works" },
     step1title: { nl: "1. Vraag uw rit aan", en: "1. Request your ride" },
     step1desc: {
-      nl: "Reserveer online, stuur een WhatsApp of bel ons direct.",
-      en: "Book online, send a WhatsApp, or call us directly.",
+      nl: "Gebruik het formulier, stuur WhatsApp of bel voor een korte afstemming.",
+      en: "Use the form, send a WhatsApp message or call for a quick check.",
     },
-    step2title: { nl: "2. Snelle bevestiging", en: "2. Fast confirmation" },
+    step2title: { nl: "2. Ontvang een offerte", en: "2. Receive a quote" },
     step2desc: {
-      nl: "Wij bevestigen uw rit en spreken eventueel vaste tarieven met u af.",
-      en: "We confirm your ride and arrange fixed rates if applicable.",
+      nl: "De ritdetails en prijsindicatie worden handmatig bevestigd.",
+      en: "Ride details and the price estimate are confirmed manually.",
     },
-    step3title: { nl: "3. Reis in alle comfort", en: "3. Travel in comfort" },
+    step3title: { nl: "3. Reis ontspannen", en: "3. Travel calmly" },
     step3desc: {
-      nl: "Uw chauffeur arriveert stipt op tijd in een representatieve Mercedes.",
-      en: "Your driver arrives perfectly on time in a representative Mercedes.",
+      nl: "Uw geplande rit verloopt met heldere communicatie en een comfortabele auto.",
+      en: "Your planned ride runs with clear communication and a comfortable car.",
     },
     notice: {
-      nl: "Boekingen worden handmatig bevestigd voor een gegarandeerde topservice.",
-      en: "Bookings are manually confirmed to guarantee top-tier service.",
+      nl: "Dit portfolio gebruikt demo-aanvragen; een formulier is geen echte boekingsbevestiging.",
+      en: "This portfolio uses demo requests; a form submission is not a real booking confirmation.",
     },
   },
 
   meetDriver: {
     heading: {
-      nl: "Een vertrouwd gezicht achter het stuur",
-      en: "A familiar face behind the wheel",
+      nl: "Gemaakt voor rustige, geplande ritten",
+      en: "Made for calm, planned rides",
     },
     body: {
-      nl: "Bij VioTaxi heeft u direct contact met uw chauffeur. Geen onnodige tussenstappen, maar duidelijke afspraken en persoonlijk vervoer van deur tot deur. Met jarenlange ervaring kent Vio de regio Groningen, Hoogezand en routes door heel Nederland.",
-      en: "With VioTaxi, you have direct contact with your chauffeur. No unnecessary steps, just clear arrangements and personal door-to-door transport. With years of experience, Vio knows Groningen, Hoogezand and routes throughout the Netherlands.",
+      nl: "Northline Private Hire is een fictioneel merk voor een portfolio-demo. De site laat zien hoe een premium private-hire ervaring kan voelen: directe contactopties, heldere ritinformatie en een rustige serviceflow.",
+      en: "Northline Private Hire is a fictional brand for a portfolio demo. The site shows how a premium private-hire experience can feel: direct contact options, clear ride details and a calm service flow.",
     },
     points: [
       {
-        nl: "Direct contact met uw chauffeur",
-        en: "Direct contact with your chauffeur",
+        nl: "Directe contactopties voor offerteaanvragen",
+        en: "Direct contact options for quote requests",
       },
       {
-        nl: "Jarenlange ervaring",
-        en: "Years of experience",
+        nl: "Geschikt voor transfers en zakelijke ritten",
+        en: "Suited to transfers and business rides",
       },
       {
-        nl: "Bekend met Groningen en heel Nederland",
-        en: "Familiar with Groningen and the Netherlands",
+        nl: "Gericht op Groningen, Haren, Hoogezand, Sappemeer, Assen en Schiphol",
+        en: "Focused on Groningen, Haren, Hoogezand, Sappemeer, Assen and Schiphol",
       },
       {
-        nl: "Comfortabel vervoer op afspraak",
-        en: "Comfortable transport by appointment",
+        nl: "Duidelijke handmatige bevestiging",
+        en: "Clear manual confirmation",
       },
     ],
   },
 
   vipService: {
-    heading: { nl: "Persoonlijk vervoer, duidelijke afspraken", en: "Personal transport, clear arrangements" },
+    heading: {
+      nl: "Private-hire service zonder ruis",
+      en: "Private-hire service without noise",
+    },
     intro: {
-      nl: "VioTaxi is ontworpen voor passagiers die hechten aan kwaliteit en persoonlijke service. Geniet van een ontspannen reis met uw persoonlijke chauffeur en betrouwbare deur-tot-deur service.",
-      en: "VioTaxi is designed for passengers who value quality and personal service. Enjoy a calm journey with your personal chauffeur and reliable door-to-door service.",
+      nl: "De demo is geschreven voor reizigers die liever vooraf plannen dan improviseren. De toon is rustig, zakelijk en persoonlijk zonder overdreven claims.",
+      en: "The demo is written for passengers who prefer planning ahead over improvising. The tone is calm, professional and personal without exaggerated claims.",
     },
     points: [
       {
-        nl: "Comfortabel vervoer in Groningen en heel Nederland",
-        en: "Comfortable transport in Groningen and throughout the Netherlands",
+        nl: "Premium luchthaventransfers naar Schiphol Airport",
+        en: "Premium airport transfers to Schiphol Airport",
       },
       {
-        nl: "Reizen in alle rust met uw persoonlijke chauffeur",
-        en: "Travel in peace with your personal chauffeur",
+        nl: "Privechauffeurritten voor afspraken en hotels",
+        en: "Private chauffeur rides for appointments and hotels",
       },
       {
-        nl: "Punctuele, discrete en professionele service",
-        en: "Punctual, discreet, and professional service",
+        nl: "Rustige communicatie voor en tijdens de rit",
+        en: "Calm communication before and during the ride",
       },
       {
-        nl: "Direct en persoonlijk contact — geen callcenter",
-        en: "Direct and personal contact — no call center",
+        nl: "Heldere offerte voor geplande routes",
+        en: "Clear quote for planned routes",
       },
       {
-        nl: "Betrouwbaar luchthavenvervoer en zakelijke ritten",
-        en: "Reliable airport transfers and business rides",
+        nl: "Mobielvriendelijke Call, WhatsApp en boekingsacties",
+        en: "Mobile-friendly Call, WhatsApp and booking actions",
       },
       {
-        nl: "Heldere afspraken zonder onverwachte kosten",
-        en: "Clear arrangements without unexpected costs",
+        nl: "Geen echte reviews, awards of ratings in deze demo",
+        en: "No real reviews, awards or ratings in this demo",
       },
     ],
   },
 
   mercedes: {
-    heading: { nl: "Comfortabel reizen met VioTaxi", en: "Comfortable travel with VioTaxi" },
+    heading: {
+      nl: "Een premium sfeer met demo-beeldmateriaal",
+      en: "A premium feel with demo imagery",
+    },
     body: {
-      nl: "Stap in een schone, comfortabele Mercedes en geniet van een ontspannen reis met uw persoonlijke chauffeur die stiptheid, discretie en veilig rijden hoog in het vaandel heeft staan.",
-      en: "Step into a clean, comfortable Mercedes and enjoy a relaxed journey with your personal chauffeur who values punctuality, discretion and safe driving.",
+      nl: "De beelden op deze website zijn neutrale portfolio-assets. Ze tonen de gewenste sfeer zonder realistische bedrijfsclaims of herkenbare voertuiginformatie.",
+      en: "The visuals on this website are neutral portfolio assets. They show the intended atmosphere without real business claims or identifiable vehicle details.",
     },
   },
 
   services: {
-    heading: { nl: "Onze diensten", en: "Our services" },
+    heading: { nl: "Diensten", en: "Services" },
     items: [
       {
-        icon: "💼",
-        title: { nl: "Zakelijk Vervoer", en: "Business Transport" },
-        desc: {
-          nl: "Comfortabel en discreet vervoer voor zakelijke afspraken, congressen of events in Groningen en daarbuiten.",
-          en: "Comfortable and discreet transport for business meetings, conferences, or events in Groningen and beyond.",
-        },
-      },
-      {
         icon: "✈️",
-        title: { nl: "Luchthavenvervoer", en: "Airport Transfers" },
+        title: { nl: "Airport Transfers", en: "Airport Transfers" },
         desc: {
-          nl: "Zorgeloze ritten van en naar Groningen Airport Eelde, Schiphol, Bremen Airport en Düsseldorf.",
-          en: "Worry-free transfers to and from Groningen Airport Eelde, Schiphol, Bremen, and Düsseldorf.",
+          nl: "Geplande transfers van Groningen en omgeving naar Schiphol Airport en terug.",
+          en: "Planned transfers from Groningen and surrounding towns to Schiphol Airport and back.",
         },
       },
       {
-        icon: "🚗",
-        title: { nl: "Particulier Vervoer", en: "Private Taxi Service" },
+        icon: "💼",
+        title: { nl: "Zakelijke ritten", en: "Business Rides" },
         desc: {
-          nl: "Representatief en comfortabel vervoer voor iedereen die waarde hechten aan stiptheid en betrouwbaarheid.",
-          en: "Professional and comfortable transport for anyone who values punctuality and reliability.",
+          nl: "Rustig, representatief vervoer voor vergaderingen, hotels en zakelijke afspraken.",
+          en: "Calm, representative travel for meetings, hotels and business appointments.",
         },
       },
       {
-        icon: "👑",
-        title: { nl: "Mercedes Comfort", en: "Mercedes Comfort" },
+        icon: "🕴️",
+        title: { nl: "Privechauffeur", en: "Private Chauffeur" },
         desc: {
-          nl: "Een schone, comfortabele Mercedes-ervaring met extra ruimte en een professionele chauffeur.",
-          en: "A clean, comfortable Mercedes experience with extra room and a professional driver.",
+          nl: "Comfortabele ritten op afspraak voor priveafspraken, diners en events.",
+          en: "Comfortable rides by appointment for private plans, dinners and events.",
+        },
+      },
+      {
+        icon: "🧾",
+        title: { nl: "Offerte op maat", en: "Custom Quotes" },
+        desc: {
+          nl: "Vooraf duidelijkheid over route, tijd, bagage en prijsindicatie.",
+          en: "Advance clarity on route, timing, luggage and price estimate.",
         },
       },
     ],
   },
 
   groningenVervoer: {
-    heading: { nl: "Vervoer vanuit Groningen en Hoogezand", en: "Transport from Groningen and Hoogezand" },
+    heading: {
+      nl: "Servicegebied voor deze demo",
+      en: "Service area for this demo",
+    },
     intro: {
-      nl: "Of u nu een betrouwbare taxi in de regio nodig heeft, een comfortabele luchthaventransfer of vervoer voor een zakelijke afspraak, VioTaxi biedt een soepele en professionele ervaring van ophaallocatie tot bestemming.",
-      en: "Whether you need a reliable taxi in the region, a comfortable airport transfer or transport for a business appointment, VioTaxi provides a smooth and professional experience from pickup to destination.",
+      nl: "Northline Private Hire is gepositioneerd rond Groningen, Haren, Hoogezand, Sappemeer, Assen en Schiphol Airport. Dit zijn demo-servicegebieden voor portfolio-doeleinden.",
+      en: "Northline Private Hire is positioned around Groningen, Haren, Hoogezand, Sappemeer, Assen and Schiphol Airport. These are demo service areas for portfolio purposes.",
     },
   },
 
   whyUs: {
-    heading: { nl: "Waarom VioTaxi?", en: "Why VioTaxi?" },
+    heading: { nl: "Waarom Northline?", en: "Why Northline?" },
     points: [
       {
-        title: { nl: "Een vertrouwd gezicht achter het stuur", en: "A familiar face behind the wheel" },
+        title: { nl: "Premium, maar nuchter", en: "Premium, but grounded" },
         desc: {
-          nl: "Geen wisselende gezichten, maar reizen met uw vaste, persoonlijke chauffeur.",
-          en: "No changing faces, but traveling with your regular, personal chauffeur.",
+          nl: "Een rustige uitstraling met duidelijke informatie en zonder harde verkooppraat.",
+          en: "A calm presentation with clear information and no heavy sales language.",
         },
       },
       {
-        title: { nl: "Direct contact, zonder tussenstap", en: "Direct contact, no middlemen" },
+        title: { nl: "Sterke mobiele acties", en: "Strong mobile actions" },
         desc: {
-          nl: "Geen callcenters of onduidelijkheden. U communiceert rechtstreeks met uw chauffeur.",
-          en: "No call centers or confusion. You communicate directly with your chauffeur.",
+          nl: "Bellen, WhatsApp en boeken blijven snel bereikbaar op kleine schermen.",
+          en: "Call, WhatsApp and booking remain easy to reach on small screens.",
         },
       },
       {
-        title: { nl: "Rustige, duidelijke communicatie", en: "Calm, clear communication" },
+        title: { nl: "Handmatige bevestiging", en: "Manual confirmation" },
         desc: {
-          nl: "Duidelijke afspraken vooraf, zodat u altijd weet waar u aan toe bent.",
-          en: "Clear arrangements in advance, so you always know what to expect.",
+          nl: "De ritflow maakt duidelijk dat aanvragen eerst worden afgestemd.",
+          en: "The ride flow makes it clear that requests are checked first.",
         },
       },
       {
-        title: { nl: "Comfortabel vervoer op afspraak", en: "Comfortable planned transport" },
+        title: { nl: "Geschikt voor transfers", en: "Built for transfers" },
         desc: {
-          nl: "Reis in alle rust in een schone, comfortabele auto. Altijd stipt op tijd.",
-          en: "Travel peacefully in a clean, comfortable car. Always right on time.",
+          nl: "Routes, tijden, bagage en type rit krijgen allemaal een eigen plek.",
+          en: "Routes, times, luggage and ride type all have their own place.",
         },
       },
       {
-        title: { nl: "Zakelijk vervoer & ritten op maat", en: "Tailored business travel" },
+        title: { nl: "Fictioneel en transparant", en: "Fictional and transparent" },
         desc: {
-          nl: "Representatief vervoer voor congressen, hotels, en zakelijke afspraken in de regio.",
-          en: "Representative transport for conferences, hotels, and business appointments in the region.",
+          nl: "De demo bevat geen echte reviews, ratings, awards of licentieclaims.",
+          en: "The demo contains no real reviews, ratings, awards or licence claims.",
         },
+      },
+    ],
+  },
+
+  testimonials: {
+    heading: {
+      nl: "Fictionele demo-testimonials",
+      en: "Fictional demo testimonials",
+    },
+    intro: {
+      nl: "Voorbeeldteksten voor presentatie-doeleinden; dit zijn geen echte klantreviews.",
+      en: "Sample copy for presentation purposes; these are not real customer reviews.",
+    },
+    items: [
+      {
+        quote: {
+          nl: "De rit naar Schiphol voelde zorgvuldig gepland en rustig gecommuniceerd.",
+          en: "The Schiphol ride felt carefully planned and calmly communicated.",
+        },
+        author: { nl: "Fictionele reiziger A", en: "Fictional passenger A" },
+      },
+      {
+        quote: {
+          nl: "Prettig voor een vroege zakelijke afspraak: helder, discreet en overzichtelijk.",
+          en: "Useful for an early business appointment: clear, discreet and easy to follow.",
+        },
+        author: { nl: "Fictionele zakelijke gast", en: "Fictional business guest" },
+      },
+      {
+        quote: {
+          nl: "Het formulier vraagt precies de informatie die je vooraf wilt delen.",
+          en: "The form asks for exactly the details you want to share beforehand.",
+        },
+        author: { nl: "Fictionele hotelgast", en: "Fictional hotel guest" },
       },
     ],
   },
@@ -262,64 +305,76 @@ export const t = {
     heading: { nl: "Veelgestelde vragen", en: "Frequently asked questions" },
     items: [
       {
-        q: { nl: "Biedt u premium taxidiensten aan in Groningen?", en: "Do you offer premium taxi service in Groningen?" },
+        q: {
+          nl: "Is Northline Private Hire een echt bedrijf?",
+          en: "Is Northline Private Hire a real company?",
+        },
         a: {
-          nl: "Ja, VioTaxi is gespecialiseerd in premium particulier en zakelijk taxivervoer in Groningen. Onze service is betrouwbaar, comfortabel en volledig afgestemd op uw wensen.",
-          en: "Yes, VioTaxi specializes in premium private and business taxi transport in Groningen. Our service is reliable, comfortable, and fully tailored to your requirements.",
+          nl: "Nee. Dit is een portfolio demonstratiewebsite voor een fictioneel private-hire merk.",
+          en: "No. This is a portfolio demonstration website for a fictional private-hire brand.",
         },
       },
       {
-        q: { nl: "Kan ik een luchthavenvervoer boeken van Groningen naar Schiphol?", en: "Can I book an airport transfer from Groningen to Schiphol?" },
+        q: {
+          nl: "Kan ik een luchthavenrit naar Schiphol aanvragen?",
+          en: "Can I request an airport ride to Schiphol?",
+        },
         a: {
-          nl: "Zeker. Wij verzorgen comfortabele vliegveldritten van Groningen naar Schiphol, Groningen Airport Eelde, Bremen Airport en andere luchthavens.",
-          en: "Absolutely. We provide comfortable airport transfers from Groningen to Schiphol, Groningen Airport Eelde, Bremen Airport, and other national or international destinations.",
+          nl: "In de demo kunt u zo'n rit aanvragen via het formulier. Er wordt geen echte boeking gemaakt.",
+          en: "In the demo, you can request that ride through the form. No real booking is created.",
         },
       },
       {
         q: { nl: "Kan ik zakelijk vervoer aanvragen?", en: "Can I request business transport?" },
         a: {
-          nl: "Ja, wij bieden representatief en professioneel zakelijk vervoer voor directieleden, zakenrelaties en evenementen in en rond Groningen.",
-          en: "Yes, we offer representative and professional business transport for executives, business partners, and corporate events in and around Groningen.",
+          nl: "Ja, de demo ondersteunt zakelijke ritten als voorbeeldscenario in de boekingsflow.",
+          en: "Yes, the demo supports business rides as a sample scenario in the booking flow.",
         },
       },
       {
-        q: { nl: "Hoe boek ik een rit?", en: "How do I book a ride?" },
+        q: { nl: "Hoe werkt de bevestiging?", en: "How does confirmation work?" },
         a: {
-          nl: "U kunt eenvoudig en snel boeken door ons te bellen of een bericht te sturen via WhatsApp. Voor geplande ritten kunt u ook ons online boekingsformulier invullen.",
-          en: "You can book quickly by calling us or sending a WhatsApp message. For planned rides, you can also fill out our online booking form.",
+          nl: "Een aanvraag is geen automatische bevestiging. De interface laat zien hoe handmatige bevestiging kan worden uitgelegd.",
+          en: "A request is not an automatic confirmation. The interface shows how manual confirmation can be explained.",
         },
       },
       {
-        q: { nl: "Biedt u vaste prijzen voor luchthavenvervoer?", en: "Do you offer fixed prices for airport transfers?" },
+        q: {
+          nl: "Zijn de testimonials en beelden echt?",
+          en: "Are the testimonials and visuals real?",
+        },
         a: {
-          nl: "Wij kunnen vooraf een heldere prijsindicatie of vast tarief met u bespreken voor langere ritten en luchthavenvervoer, zodat u precies weet waar u aan toe bent.",
-          en: "We can discuss a clear price estimate or fixed rate in advance for long-distance trips and airport transfers, ensuring you know exactly what to expect.",
+          nl: "Nee. De testimonials zijn expliciet fictioneel en de beelden zijn neutrale demo-assets.",
+          en: "No. The testimonials are explicitly fictional and the visuals are neutral demo assets.",
         },
       },
     ],
   },
 
   finalCta: {
-    heading: { nl: "Reis comfortabel met VioTaxi", en: "Travel in Comfort with VioTaxi" },
-    sub: {
-      nl: "Heeft u een betrouwbare taxi in Groningen nodig? Reserveer uw rit direct online of neem contact met ons op.",
-      en: "Need a reliable taxi in Groningen? Book your ride online now or contact us directly.",
+    heading: {
+      nl: "Vraag een rit of offerte aan",
+      en: "Request a ride or quote",
     },
-    ctaCall: { nl: "Bel nu", en: "Call now" },
-    ctaWhatsapp: { nl: "WhatsApp", en: "WhatsApp" },
-    ctaBook: { nl: "Rit reserveren", en: "Reserve a Ride" },
+    sub: {
+      nl: "Bekijk hoe een premium private-hire boekingsflow werkt in deze fictional demo.",
+      en: "See how a premium private-hire booking flow works in this fictional demo.",
+    },
+    ctaCall: { nl: "Bel nu", en: "Call Now" },
+    ctaWhatsapp: { nl: "WhatsApp ons", en: "WhatsApp Us" },
+    ctaBook: { nl: "Rit boeken", en: "Book a Ride" },
   },
 
   bookPage: {
-    title: { nl: "Rit reserveren", en: "Book a Ride" },
+    title: { nl: "Rit boeken", en: "Book a Ride" },
     intro: {
-      nl: "Vul het formulier in om een ritaanvraag te sturen. VioTaxi neemt daarna contact met u op om de rit te bevestigen.",
-      en: "Fill in the form to send a booking request. VioTaxi will then contact you to confirm the ride.",
+      nl: "Vul het formulier in om een demo-ritaanvraag of offerteaanvraag voor Northline Private Hire samen te stellen.",
+      en: "Fill in the form to compose a demo ride request or quote request for Northline Private Hire.",
     },
     noticeTitle: { nl: "Let op", en: "Please note" },
     notice: {
-      nl: "Een ingevuld formulier is een aanvraag, geen directe bevestiging. Uw rit is bevestigd nadat VioTaxi contact met u heeft opgenomen.",
-      en: "A submitted form is a request, not an automatic confirmation. Your ride is confirmed after VioTaxi contacts you.",
+      nl: "Dit is een portfolio-demo. Een ingevuld formulier maakt geen echte boeking aan.",
+      en: "This is a portfolio demo. A submitted form does not create a real booking.",
     },
     labelName: { nl: "Naam", en: "Name" },
     labelPhone: { nl: "Telefoonnummer", en: "Phone number" },
@@ -334,21 +389,21 @@ export const t = {
     labelNotes: { nl: "Opmerkingen (optioneel)", en: "Notes (optional)" },
     rideTypes: {
       local: { nl: "Lokale rit", en: "Local ride" },
-      airport: { nl: "Luchthavenvervoer", en: "Airport transfer" },
-      station: { nl: "Station", en: "Train station" },
-      hospital: { nl: "Ziekenhuisafspraak", en: "Hospital appointment" },
-      business: { nl: "Zakelijk vervoer", en: "Business ride" },
+      airport: { nl: "Luchthaventransfer", en: "Airport transfer" },
+      station: { nl: "Station of hotel", en: "Station or hotel" },
+      hospital: { nl: "Afspraak", en: "Appointment" },
+      business: { nl: "Zakelijke rit", en: "Business ride" },
       other: { nl: "Anders", en: "Other" },
     },
     confirmCheckbox: {
-      nl: "Ik begrijp dat mijn rit pas bevestigd is nadat VioTaxi contact met mij heeft opgenomen.",
-      en: "I understand that my ride is only confirmed after VioTaxi has contacted me.",
+      nl: "Ik begrijp dat dit een portfolio-demo is en dat mijn aanvraag geen echte boeking bevestigt.",
+      en: "I understand this is a portfolio demo and that my request does not confirm a real booking.",
     },
     submit: { nl: "Aanvraag versturen", en: "Send request" },
-    successTitle: { nl: "Aanvraag ontvangen!", en: "Request received!" },
+    successTitle: { nl: "Demo-aanvraag klaar", en: "Demo request ready" },
     successText: {
-      nl: "Bedankt voor uw aanvraag. VioTaxi neemt zo snel mogelijk contact met u op om de rit te bevestigen. Uw aanvraag is nog niet bevestigd.",
-      en: "Thank you for your request. VioTaxi will contact you as soon as possible to confirm the ride. Your request is not yet confirmed.",
+      nl: "Uw aanvraag is samengesteld. Gebruik WhatsApp of e-mail om te zien hoe de demo-overdracht werkt.",
+      en: "Your request has been composed. Use WhatsApp or email to see how the demo handoff works.",
     },
     whatsappBtn: { nl: "Stuur ook via WhatsApp", en: "Also send via WhatsApp" },
     mailtoBtn: { nl: "Stuur ook per e-mail", en: "Also send by email" },
@@ -363,52 +418,52 @@ export const t = {
   },
 
   servicesPage: {
-    title: { nl: "Onze diensten", en: "Our services" },
+    title: { nl: "Diensten", en: "Services" },
     intro: {
-      nl: "VioTaxi biedt betrouwbare, hoogwaardige taxidiensten in Groningen en daarbuiten. Of het nu gaat om zakelijk vervoer, luchthavenvervoer of particulier vervoer — u reist comfortabel met een ervaren chauffeur.",
-      en: "VioTaxi provides reliable, high-quality taxi services in Groningen and beyond. Whether it is business transport, airport transfers, or private rides — you travel comfortably with an experienced driver.",
+      nl: "Northline Private Hire is gepositioneerd als premium demo-concept voor luchthaventransfers en privechauffeurritten. De inhoud is fictief en bedoeld als portfolio showcase.",
+      en: "Northline Private Hire is positioned as a premium demo concept for airport transfers and private chauffeur rides. The content is fictional and intended as a portfolio showcase.",
     },
-    bookBtn: { nl: "Rit reserveren", en: "Reserve a Ride" },
-    whatsappBtn: { nl: "Vraag via WhatsApp", en: "Ask via WhatsApp" },
+    bookBtn: { nl: "Rit boeken", en: "Book a Ride" },
+    whatsappBtn: { nl: "Vraag offerte", en: "Request Quote" },
     sections: [
       {
-        icon: "🚗",
-        title: { nl: "Particulier Vervoer", en: "Private Taxi Service" },
-        desc: {
-          nl: "Comfortabele en betrouwbare taxiritten voor gasten en particulieren die extra waarde hechten aan een uitstekende service en persoonlijke aandacht.",
-          en: "Comfortable and reliable taxi journeys for passengers who value excellent service and dedicated personal attention.",
-        },
-      },
-      {
         icon: "✈️",
-        title: { nl: "Luchthavenvervoer", en: "Airport Transfers" },
+        title: { nl: "Schiphol Transfers", en: "Schiphol Transfers" },
         desc: {
-          nl: "Zorgeloze en uiterst betrouwbare ritten naar Groningen Airport Eelde, Schiphol, Bremen Airport of andere bestemmingen. Wij plannen uw vertrektijd ruim in.",
-          en: "Worry-free and exceptionally reliable transfers to Groningen Airport Eelde, Schiphol, Bremen, or other destinations.",
+          nl: "Voorbeeldservice voor comfortabele ritten tussen Groningen, Haren, Hoogezand, Sappemeer, Assen en Schiphol Airport.",
+          en: "Sample service for comfortable rides between Groningen, Haren, Hoogezand, Sappemeer, Assen and Schiphol Airport.",
         },
       },
       {
         icon: "💼",
-        title: { nl: "Zakelijk Vervoer", en: "Business Transport" },
+        title: { nl: "Zakelijk vervoer", en: "Business Transport" },
         desc: {
-          nl: "Representatief en professioneel vervoer voor zakelijke bijeenkomsten, directieleden, hotelgasten en corporate events in heel Groningen en omstreken.",
-          en: "Prestigious and highly professional transport for business meetings, executives, hotel guests, and corporate events across Groningen.",
+          nl: "Demo-copy voor directievervoer, hotelgasten en afspraken waarbij rust en representatie belangrijk zijn.",
+          en: "Demo copy for executive travel, hotel guests and appointments where calm and presentation matter.",
         },
       },
       {
-        icon: "👑",
-        title: { nl: "Mercedes Comfort & Klasse", en: "Mercedes Comfort & Style" },
+        icon: "🕴️",
+        title: { nl: "Privechauffeur", en: "Private Chauffeur" },
         desc: {
-          nl: "Reis in een schone, hoogwaardig uitgeruste Mercedes-Benz. Geniet van de rust en ruimte aan boord van een luxe wagen.",
-          en: "Travel in a spotless, premium-equipped Mercedes-Benz. Enjoy peace, quietness, and generous legroom.",
+          nl: "Geplande ritten voor diners, events en persoonlijke afspraken met duidelijke communicatie vooraf.",
+          en: "Planned rides for dinners, events and personal appointments with clear communication in advance.",
         },
       },
       {
-        icon: "🛣️",
-        title: { nl: "Langeafstandsritten", en: "Long-Distance Rides" },
+        icon: "🧳",
+        title: { nl: "Hotel & station", en: "Hotel & Station" },
         desc: {
-          nl: "Luxe interstedelijk privévervoer vanuit Groningen naar elke bestemming. Geniet van een ontspannen, continue reis.",
-          en: "Premium intercity private transport from Groningen to any destination. Enjoy a smooth, uninterrupted journey.",
+          nl: "Voorbeeldflow voor ophalen bij hotels, stations en adressen met bagage-informatie in de aanvraag.",
+          en: "Sample flow for pickups at hotels, stations and addresses with luggage details in the request.",
+        },
+      },
+      {
+        icon: "🧾",
+        title: { nl: "Offerte op maat", en: "Custom Quote" },
+        desc: {
+          nl: "Een rustige offerteflow voor langere ritten waarbij route, tijd en prijsindicatie eerst worden afgestemd.",
+          en: "A calm quote flow for longer rides where route, time and estimate are checked first.",
         },
       },
     ],
@@ -417,17 +472,17 @@ export const t = {
   contactPage: {
     title: { nl: "Contact", en: "Contact" },
     intro: {
-      nl: "Neem gerust contact op. Voor spoedritten is bellen het snelst.",
-      en: "Feel free to get in touch. For urgent rides, calling is the fastest.",
+      nl: "Gebruik de demo-contactopties voor Call, WhatsApp of e-mail. Northline Private Hire is een fictioneel merk.",
+      en: "Use the demo contact options for Call, WhatsApp or email. Northline Private Hire is a fictional brand.",
     },
-    callBtn: { nl: "Bel ons", en: "Call us" },
-    whatsappBtn: { nl: "WhatsApp", en: "WhatsApp" },
+    callBtn: { nl: "Bel nu", en: "Call Now" },
+    whatsappBtn: { nl: "WhatsApp ons", en: "WhatsApp Us" },
     emailBtn: { nl: "E-mail sturen", en: "Send email" },
-    serviceAreaHeading: { nl: "Rijgebied", en: "Service area" },
-    mapPlaceholder: { nl: "Bekijk op Google Maps", en: "View on Google Maps" },
+    serviceAreaHeading: { nl: "Demo-rijgebied", en: "Demo service area" },
+    mapPlaceholder: { nl: "Bekijk Groningen op Google Maps", en: "View Groningen on Google Maps" },
     urgentNote: {
-      nl: "Voor spoedritten: bel direct. Online aanvragen worden zo snel mogelijk verwerkt.",
-      en: "For urgent rides: call directly. Online requests are processed as soon as possible.",
+      nl: "Portfolio demo: deze contactgegevens zijn voorbeeldgegevens en horen niet bij een echte vervoerder.",
+      en: "Portfolio demo: these contact details are sample data and do not belong to a real transport provider.",
     },
   },
 
@@ -440,17 +495,17 @@ export const t = {
   },
 
   footer: {
-    serviceArea: { nl: "Rijgebied", en: "Service area" },
+    serviceArea: { nl: "Demo-rijgebied", en: "Demo service area" },
     privacyLink: { nl: "Privacyverklaring", en: "Privacy Policy" },
     termsLink: { nl: "Boekingsvoorwaarden", en: "Booking Terms" },
     disclaimer: {
-      nl: "Ritaanvragen zijn pas bevestigd nadat VioTaxi contact met u heeft opgenomen.",
-      en: "Booking requests are only confirmed after VioTaxi contacts you.",
+      nl: "Ritaanvragen in deze demo zijn niet verbonden aan een echte vervoerder.",
+      en: "Ride requests in this demo are not connected to a real transport provider.",
     },
     rights: { nl: "Alle rechten voorbehouden.", en: "All rights reserved." },
     tagline: {
-      nl: "Jarenlange ervaring op de Nederlandse wegen.",
-      en: "Years of experience on Dutch roads.",
+      nl: "Premium airport transfers en privechauffeurritten.",
+      en: "Premium airport transfers and private chauffeur rides.",
     },
   },
 

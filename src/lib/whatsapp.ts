@@ -22,7 +22,7 @@ export interface BookingData {
 /** Build a human-readable WhatsApp message from booking form data */
 export function buildWhatsAppUrl(data: BookingData): string {
   const lines = [
-    "Hallo VioTaxi, ik wil graag een taxi reserveren.",
+    "Hello Northline Private Hire, I would like to request a ride or quote for this portfolio demo.",
     "",
     `Naam: ${data.name}`,
     `Telefoon: ${data.phone}`,
@@ -45,9 +45,13 @@ export function buildWhatsAppUrl(data: BookingData): string {
 
 /** Build a mailto: link with the same booking details */
 export function buildMailtoUrl(data: BookingData): string {
-  const subject = encodeURIComponent(`Ritaanvraag VioTaxi – ${data.name}`);
+  const subject = encodeURIComponent(`Ride request Northline Private Hire - ${data.name}`);
   const body = encodeURIComponent(
     [
+      "Hello Northline Private Hire,",
+      "",
+      "I would like to request a ride or quote for this portfolio demo:",
+      "",
       `Naam: ${data.name}`,
       `Telefoon: ${data.phone}`,
       data.email ? `E-mail: ${data.email}` : null,

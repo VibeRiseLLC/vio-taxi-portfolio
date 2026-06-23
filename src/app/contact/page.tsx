@@ -4,11 +4,11 @@ import ContactPageClient from "@/components/pages/ContactPageClient";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Neem contact op met VioTaxi in Hoogezand. Bel, WhatsApp of stuur een e-mail. Voor spoedritten is bellen het snelst.",
+    "Demo contact page for Northline Private Hire, a fictional private-hire portfolio brand.",
   openGraph: {
-    title: "Contact | VioTaxi Hoogezand",
+    title: "Contact | Northline Private Hire",
     description:
-      "Neem direct contact op met VioTaxi. Bel of stuur een WhatsApp voor de snelste reactie.",
+      "Use sample Call, WhatsApp and email actions in this fictional portfolio demo.",
   },
 };
 
